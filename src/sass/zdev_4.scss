@@ -21,13 +21,36 @@
 }
 
 // goods items
-.goods-items{display: flex;align-content:center;justify-content:flex-start;border:1px solid #ecf0f1;background-color: #fff;}
+.goods-items{display: flex;align-content:center;justify-content:flex-start;border:1px solid #ecf0f1;background-color: #fff;
+
+    .slick-prev, .slick-next{border-bottom: 5px solid #acbbc4;border-right: 5px solid #acbbc4;max-height: none;transform: translate(0, -50%) rotate(-45deg);z-index: 10;height: 15px;width: 15px;
+        &:before{display: none;}
+    }
+    .slick-prev{left: 10px;transform: translate(0, -50%) rotate(135deg);}
+    .slick-next{right: 10px;}
+}
 .goods-item{width: 25%;border-right: 1px solid #ecf0f1;
+    &:hover{
+        .goods-item-title{text-decoration: underline;}
+    }
+    a:hover{text-decoration: none;}
     &:nth-child(4n){border-right: none;}
-    .goods-item-wrap{display: flex;height: 280px;flex-direction:column;overflow: hidden;padding: 5px 18px 30px;background-color: #fff;
+    .goods-item-wrap{display: flex;height: 280px;flex-direction:column;overflow: hidden;padding: 5px 18px 20px;background-color: #fff;
         .goods-item-img{height: 165px;position: relative;
             img{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
         }
-        .goods-item-title{font-size: 14px;color: #37728b;font-family: 'Open Sans',sans-serif;font-weight: 600;}
+        .goods-item-title{font-size: 14px;color: #37728b;font-family: 'Open Sans',sans-serif;font-weight: 600;padding: 15px 0px 5px;}
+        .goods-item-subtitle{font-family: "Open Sans";color: #ababab;font-size: 12px;padding: 8px 0px 10px;}
+        .goods-item-price{padding: 5px 0px;
+            .goods-item-price-now{font-size: 18px;color:#6c6c6c;font-family: "Open Sans";font-weight: bold;margin-right: 8px;display: inline-block;vertical-align: middle;
+                &.action{color: #f32424;}
+            }
+            .goods-item-price-old{font-size: 12px;color: #ababab;text-decoration: line-through;display: inline-block;vertical-align: middle;}
+        }
     }
+
+}
+
+.middle-goods{
+    .goods-items{margin-bottom: 10px;}
 }
