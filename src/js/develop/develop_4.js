@@ -41,8 +41,8 @@ function mainSlider(){
 }
 
 function sliderBends(){
-    if( $('.brends-wrap').length ){
-        $('.brends-wrap').slick({
+    if( $('.brends-slider-wrap').length ){
+        $('.brends-slider-wrap').slick({
           infinite: true,
           slidesToShow: 5,
           slidesToScroll: 1,

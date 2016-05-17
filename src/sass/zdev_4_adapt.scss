@@ -29,6 +29,22 @@
         h5{font-size: 22px;}
         a{display: inline-block;padding: 3px 14px;background-color: #fff;border-radius: 18px;font-family: 'Open Sans',sans-serif;}
     }
+
+    // news
+    .news{
+        .news-wrap{
+            .item{
+                 .item-img{align-content:center;justify-content:center;display: flex;
+                    a{display: block;position: static;transform: translate(0%, 0%);align-content:center;justify-content:center;display: flex;align-items:center;
+                        img{border-radius: 8px;max-width: 100%;}
+                    }
+                 }
+                 .item-time{}
+                 .item-title{font-size: 13px;line-height: 18px;}
+                 .item-text{line-height: 18px;}
+            }
+        }
+    }
 }
 @media screen and (max-width: 767px){
 
