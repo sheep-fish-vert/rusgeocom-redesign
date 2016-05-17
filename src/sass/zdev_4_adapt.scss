@@ -68,6 +68,20 @@
             }
         }
     }
+
+    // brends
+    .brends{
+        .brends-wrap{padding: 0 3%;}
+        .brends-item{
+            &:hover{border-bottom: 2px solid transparent;}
+        }
+        .slick-prev, .slick-next{border-bottom: 5px solid #acbbc4;border-right: 5px solid #acbbc4;transform: translate(0, -50%) rotate(-45deg);height: 15px;width: 15px;
+            &:before{display: none;}
+            &:hover{border-color:#8BA4B3; }
+        }
+        .slick-prev{left: 10px;transform: translate(0, -50%) rotate(135deg);}
+        .slick-next{right: 10px;}
+    }
 }
 @media screen and (max-width: 479px){
 
