@@ -144,12 +144,193 @@
 
 /* /login form show & user logined options show */
 
+/* busket skripts */
+
+    function busketScripts(){
+
+        var itemsLength = $('.header-busket-list-wrap li').length;
+
+        $('.busket-subtitle span, .header-busket-value span').text(itemsLength);
+
+
+        /* busket change items value */
+
+            function busketItemValue(item, callback){
+
+                var itemCount = item.find('.busket-list-input input').val();
+                var itemPrice = item.find('.busket-list-count-main').data('price');
+
+                var itemId = item.data('item-id');
+                var itemSum = itemCount * itemPrice;
+                var itemSumReg = numberWithSpaces(itemSum);
+
+                item.find('.busket-list-price span').attr('data-item-sum', itemSum).text(itemSumReg);
+
+                $.ajax({
+                    url:someUrl,
+                    data:{'action':'changeItemValue','itemId':itemId, 'count':itemCount},
+                    method:'POST'
+                });
+
+                if(typeof callback == 'function'){
+                    callback();
+                }
+
+            }
+
+        /* /busket change items value */
+
+        /* busket all items sum */
+
+            function busketAllItemsSum(){
+
+                var allSum = 0;
+
+                $('.header-busket-list-wrap li').each(function(){
+
+                    allSum = allSum + parseInt($(this).find('.busket-list-price span').attr('data-item-sum'));
+
+                });
+
+                $('.all-sum-value span').text(numberWithSpaces(allSum));
+
+            }
+
+        /* /busket all items sum */
+
+        /* calcing sum by page loading */
+
+            $('.header-busket-list-wrap li').each(function(index){
+
+                busketItemValue($(this));
+
+                if((itemsLength-1) == index){
+                    busketAllItemsSum();
+                }
+
+            });
+
+        /* /calcing sum by page loading */
+
+        /* change item count */
+
+            function changeItemCount(){
+
+                $(document).on('click','.busket-list-count-change', function(){
+
+                    var item = $(this).parents('li');
+                    var itemCount = parseInt(item.find('.busket-list-input input').val());
+
+                    if($(this).is('.plus')){
+
+                        itemCount = itemCount + 1;
+                        item.find('.busket-list-text span').text(itemCount);
+                        item.find('.busket-list-input input').val(itemCount);
+
+                        busketItemValue(item, busketAllItemsSum);
+
+                    }else if($(this).is('.minus') && itemCount != 1){
+
+                        itemCount = itemCount - 1;
+                        item.find('.busket-list-text span').text(itemCount);
+                        item.find('.busket-list-input input').val(itemCount);
+
+                        busketItemValue(item, busketAllItemsSum);
+
+                    }
+
+                });
+
+            };
+
+            changeItemCount();
+
+        /* /change item count */
+
+        /* open busket fancybox */
+
+            $('.fancybox-popup').fancybox({
+                padding:0,
+                fitToView:true,
+                autoSize:true,
+                wrapCSS:'busket-popup-main',
+                beforeLoad:function(){
+
+                    $('.header-busket-list-main').slideUp(300);
+
+                }
+            });
+
+        /* /open busket fancybox */
+
+        /* remove item from fancy busket */
+
+            function removeItemFromBusket(){
+
+                $(document).on('click','.remove-item', function(){
+
+                    var removedId = $(this).attr('data-item-id');
+                    $(this).parents('li').remove();
+
+                    itemsLength = $('.header-busket-list-wrap li').length;
+
+                    $('.busket-subtitle span, .header-busket-value span').text(itemsLength);
+
+                    $.ajax({
+                        url:someUrl,
+                        data:{'action':'removeItemFromBusked','removedId':removedId},
+                        method:'POST'
+                    });
+
+                   busketAllItemsSum();
+
+                });
+
+            }
+
+            removeItemFromBusket();
+
+        /* /remove item from fancy busket */
+
+        /* hover effects on busket icon */
+
+            $(document).on('mouseenter','.header-busket',function(){
+
+                if($(this).find('.header-busket-wrap').is('.has-items')){
+                    $('.header-busket-list-main').stop().slideDown(300);
+                }
+
+            });
+
+            $(document).on('mouseleave','.header-busket',function(){
+
+                $('.header-busket-list-main').stop().slideUp(300);
+
+            });
+
+        /* /hover effects on busket icon */
+
+    };
+
+/* /busket skripts */
+
+/* expresion for numbers with spaces */
+
+    function numberWithSpaces(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return parts.join(".");
+    }
+
+/* /expresion for numbers with spaces */
+
 
 $(document).ready(function(){
 
     townStyler();
     headerCatalogAdaptation();
     loginizationEvents();
+    busketScripts();
 
 });
 
