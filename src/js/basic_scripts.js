@@ -127,20 +127,26 @@ function bindExample(){
 function headeButer(menuMobile,toggleMenu){
     if(menuMobile){
         menuMobile.click(function(event) {
-            if($(window).width()<1024-$.scrollbarWidth()){
+            if($(window).width()<666-$.scrollbarWidth()){
                 $(this).toggleClass('active');
                 toggleMenu.stop().slideToggle();
             }
         });
 
         $(document).on('click touchstart',function (event){
-            if($(window).width()<1024-$.scrollbarWidth()){
+            if($(window).width()<666-$.scrollbarWidth()){
                 var div = toggleMenu;
                 if (!div.is(event.target) && div.has(event.target).length === 0 && !menuMobile.is(event.target) && menuMobile.has(event.target).length === 0)
                     {
                         toggleMenu.slideUp();
                         menuMobile.removeClass('active');
                     }
+            }
+        });
+
+        $(window).resize(function(){
+            if($(window).width() > 666){
+                toggleMenu.removeAttr('style');
             }
         });
     }
@@ -153,6 +159,9 @@ $(document).ready(function() {
 
     //goTo();
     //animationBlock($('.setion-animate'));
+
+    headeButer($('.sendwich'), $('.header-top-wrap'));
+
 });
 
 $(window).resize(function() {

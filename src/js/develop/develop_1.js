@@ -16,6 +16,7 @@
         var showMoreWidth = $('.header-nav-more').width();
         var townSelectWidth = $('.header-town').width();
         var heightMenuPoint = 15; // catalog menu height
+        var timer = null;
 
         /* adding elements size like their data-attr */
         $('.header-top-nav ul li').each(function(){
@@ -25,65 +26,69 @@
 
         function showMagic(){
 
-            if($(window).width() > 666){
+            clearTimeout(timer);
 
-                /* if catalog list to big */
-                    if($('.header-top-nav').height() > heightMenuPoint){
-                        do{
+            if($(window).width() > (666-$.scrollbarWidth())){
 
-                            var catalogItem = $('.header-top-nav nav li').eq($('.header-top-nav nav li').length-1).remove();
-                            $('.header-nav-more ul').prepend(catalogItem);
-                            if($('.header-nav-more li').length != 0){
-                                $('.header-nav-more').addClass('show');
+                timer = setTimeout(function(){
+                    /* if catalog list to big */
+                        if($('.header-top-nav').height() > heightMenuPoint){
+                            do{
+
+                                var catalogItem = $('.header-top-nav nav li').eq($('.header-top-nav nav li').length-1).remove();
+                                $('.header-nav-more ul').prepend(catalogItem);
+                                if($('.header-nav-more li').length != 0){
+                                    $('.header-nav-more').addClass('show');
+                                }
+
                             }
+                            while($('.header-top-nav').height() > heightMenuPoint);
+                        }
+                    /* /if catalog list to big */
+
+                    /* let see is there free space for catalog items */
+                        else if($('.header-nav-more').is('.show')){
+
+                            /* free space size */
+                                var freeSpaceForCatalogList = $('.header-top-wrap').width() - $('.header-top-nav nav').width()- townSelectWidth;
+                            /* /free space size */
+
+                            /* if in more list only one item */
+                                if($('.header-nav-more li').length > 1){
+
+                                    freeSpaceForCatalogList = freeSpaceForCatalogList - showMoreWidth;
+
+                                }
+                            /* /if in more list only one item */
+
+                            /* width of last item in more list */
+                                var headerNavMoreItemWidth = $('.header-nav-more li').eq($('.header-nav-more li').length-1).data('width');
+                            /* /width of last item in more list */
+
+                            /* just magic (while work incorect) */
+                                for(var i = 1;i>0;){
+                                    if((freeSpaceForCatalogList - headerNavMoreItemWidth) >=0){
+                                        freeSpaceForCatalogList = freeSpaceForCatalogList - headerNavMoreItemWidth;
+                                        var moreItem = $('.header-nav-more li').eq($('.header-nav-more li').length - 1).remove();
+                                        $('.header-top-nav nav ul').append(moreItem);
+                                        if($('.header-nav-more li').length == 0){
+                                            $('.header-nav-more').removeClass('show');
+                                            i=-1;
+                                        }else if($('.header-nav-more li').length == 1){
+                                            freeSpaceForCatalogList = freeSpaceForCatalogList + showMoreWidth;
+                                            headerNavMoreItemWidth = $('.header-nav-more li').eq($('.header-nav-more li').length-1).data('width');
+                                        }else{
+                                           headerNavMoreItemWidth = $('.header-nav-more li').eq($('.header-nav-more li').length-1).data('width');
+                                        }
+                                    }else{
+                                        i=-1;
+                                    }
+                                }
+                                /* /just magic (while work incorect) */
 
                         }
-                        while($('.header-top-nav').height() > heightMenuPoint);
-                    }
-                /* /if catalog list to big */
-
-                /* let see is there free space for catalog items */
-                    else if($('.header-nav-more').is('.show')){
-
-                        /* free space size */
-                            var freeSpaceForCatalogList = $('.header-top-wrap').width() - $('.header-top-nav nav').width()- townSelectWidth;
-                        /* /free space size */
-
-                        /* if in more list only one item */
-                            if($('.header-nav-more li').length > 1){
-
-                                freeSpaceForCatalogList = freeSpaceForCatalogList - showMoreWidth;
-
-                            }
-                        /* /if in more list only one item */
-
-                        /* width of last item in more list */
-                            var headerNavMoreItemWidth = $('.header-nav-more li').eq($('.header-nav-more li').length-1).data('width');
-                        /* /width of last item in more list */
-
-                        /* just magic (while work incorect) */
-                            for(var i = 1;i>0;){
-                                if((freeSpaceForCatalogList - headerNavMoreItemWidth) >=0){
-                                    freeSpaceForCatalogList = freeSpaceForCatalogList - headerNavMoreItemWidth;
-                                    var moreItem = $('.header-nav-more li').eq($('.header-nav-more li').length - 1).remove();
-                                    $('.header-top-nav nav ul').append(moreItem);
-                                    if($('.header-nav-more li').length == 0){
-                                        $('.header-nav-more').removeClass('show');
-                                        i=-1;
-                                    }else if($('.header-nav-more li').length == 1){
-                                        freeSpaceForCatalogList = freeSpaceForCatalogList + showMoreWidth;
-                                        headerNavMoreItemWidth = $('.header-nav-more li').eq($('.header-nav-more li').length-1).data('width');
-                                    }else{
-                                       headerNavMoreItemWidth = $('.header-nav-more li').eq($('.header-nav-more li').length-1).data('width');
-                                    }
-                                }else{
-                                    i=-1;
-                                }
-                            }
-                            /* /just magic (while work incorect) */
-
-                    }
-                /* /let see is there free space for catalog items */
+                    /* /let see is there free space for catalog items */
+                },300);
             }else{
                 /* adaprtation for mobile */
                     if($('.header-nav-more').is('.show')){
@@ -121,11 +126,30 @@
 
 /* /header catalog adaptation */
 
+/* login form show & user logined options show */
+
+    function loginizationEvents(){
+
+        $(document).on('click', '.sliding-button', function(){
+            if($(this).is('.active')){
+                $(this).removeClass('active');
+                $('.sliding-block').removeClass('active').stop().slideUp(300);
+            }else{
+                $(this).addClass('active');
+                $(this).parents('.sliding-wrap').find('.sliding-block').addClass('active').stop().slideDown(300);
+            }
+        });
+
+    }
+
+/* /login form show & user logined options show */
+
 
 $(document).ready(function(){
 
     townStyler();
     headerCatalogAdaptation();
+    loginizationEvents();
 
 });
 
