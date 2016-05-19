@@ -122,7 +122,7 @@
                     .mobile-catalog-button{display: block;}
 
                     .header-mobile-catalog-wrap{width: 65%;height: 100px;display: flex;flex-direction:column;align-items: center;justify-content: center;
-                        &>ul{display: none;position: absolute;width: 100%;top:100%;left:0;background-color: #3b7089;
+                        &>ul{display: none;position: absolute;width: 100%;top:100%;left:0;background-color: #3b7089;box-shadow:inset 0 2px 6px 0 rgba(12, 73, 102, .79);
                             li{flex-direction:column;}
                         }
                     }
@@ -180,11 +180,18 @@
                                             }
                                         }
                                     }
+                                    &>p{
+                                        .catalog-list-arrow{width: 11px;height: 11px;
+                                            &:before, &:after{width: 11px;height: 3px;transform:rotate(0deg) translateZ(0px);top:calc(50% - 2px);left:0;}
+                                            &:before{top:calc(50% - 2px);left:50%;}
+                                            &:after{transform:rotate(90deg);}
+                                        }
+                                    }
                                     ul{display: none;position: relative;
                                         &>li, &>li:hover{box-shadow:none;
                                             p{padding:10px 0px 10px 10px;
                                                 a{color:#37728b;font-weight: 600;font-family: 'Open Sans', sans-serif;}
-                                                span{transform-origin:50% 50%;}
+                                                span{transform-origin:50% 50%;transition:all 300ms ease;}
                                                 &.active{
                                                     span{transform:rotate(90deg);
                                                         &:before, &:after{background-color:#37728b;}
