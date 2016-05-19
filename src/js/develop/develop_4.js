@@ -295,7 +295,7 @@ function swithTub(){
 
 
   function tabToSelect(){
-    if( $(window).width() < 666 ){
+    if( $(window).width() < 666 && !$('.wrapper>.tab-select').length ){
       $('.wrapper .tabs').each(function(index, el) {
         var elem = $(el);
 
@@ -316,8 +316,9 @@ function swithTub(){
         $(this).parents('.tab-select').find('.tab-select-title').text(text);
         $(this).parent().removeClass('active').slideUp();
       });
-    }else{
+    }else if( $(window).width() > 666 ){
       $('.tab-select-title').unwrap().remove();
+      $('.wrapper .tabs').removeAttr('style');
     }
   }
   tabToSelect();
