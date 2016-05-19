@@ -202,6 +202,10 @@
 
             $('.header-busket-list-wrap li').each(function(index){
 
+                if(parseInt($(this).find('input').val()) == 1){
+                    $(this).find('.minus').addClass('disabled');
+                }
+
                 busketItemValue($(this));
 
                 if((itemsLength-1) == index){
@@ -216,30 +220,77 @@
 
             function changeItemCount(){
 
-                $(document).on('click','.busket-list-count-change', function(){
+                /* change count by button */
 
-                    var item = $(this).parents('li');
-                    var itemCount = parseInt(item.find('.busket-list-input input').val());
+                    $(document).on('click','.busket-list-count-change', function(){
 
-                    if($(this).is('.plus')){
+                        var item = $(this).parents('li');
+                        var itemCount = parseInt(item.find('.busket-list-input input').val());
 
-                        itemCount = itemCount + 1;
-                        item.find('.busket-list-text span').text(itemCount);
-                        item.find('.busket-list-input input').val(itemCount);
+                        if($(this).is('.plus')){
 
-                        busketItemValue(item, busketAllItemsSum);
+                            itemCount = itemCount + 1;
+                            if(itemCount > 1){
+                                $('.busket-list-count-change.minus').removeClass('disabled');
+                            }
+                            item.find('.busket-list-text span').text(itemCount);
+                            item.find('.busket-list-input input').val(itemCount);
 
-                    }else if($(this).is('.minus') && itemCount != 1){
+                            busketItemValue(item, busketAllItemsSum);
 
-                        itemCount = itemCount - 1;
-                        item.find('.busket-list-text span').text(itemCount);
-                        item.find('.busket-list-input input').val(itemCount);
+                        }else if($(this).is('.minus') && itemCount != 1){
 
-                        busketItemValue(item, busketAllItemsSum);
+                            itemCount = itemCount - 1;
+                            if(itemCount == 1){
+                                $(this).addClass('disabled');
+                            }
+                            item.find('.busket-list-text span').text(itemCount);
+                            item.find('.busket-list-input input').val(itemCount);
 
-                    }
+                            busketItemValue(item, busketAllItemsSum);
 
-                });
+                        }
+
+                    });
+
+                /* /change count by button */
+
+                /* change count by input */
+
+                    var pattern = /^[0-9]\d*$/;
+                    var lastValue = 1;
+
+                    $(document).on('keydown', '.busket-list-input input', function(){
+                        if(pattern.test($(this).val())){
+                            lastValue = $(this).val();
+                        }
+
+                    });
+
+                    $(document).on('keyup', '.busket-list-input input', function(){
+
+                        var parent = $(this).parents('li');
+                        var thisValue = $(this).val();
+
+                        if(!pattern.test(thisValue)){
+                            $(this).val(lastValue);
+                        }
+                        else{
+
+                            if(parseInt($(this).val())>1){
+                                parent.find('.minus').removeClass('disable');
+                            }
+                            else{
+                                parent.find('.minus').addClass('disable');
+                            }
+
+                            parent.find('.busket-list-text span').text(parseInt($(this).val()));
+                            busketItemValue(parent, busketAllItemsSum);
+                        }
+
+                    });
+
+                /* /change count by input */
 
             };
 
@@ -282,7 +333,12 @@
                         method:'POST'
                     });
 
-                   busketAllItemsSum();
+                    if(itemsLength == 0){
+                        $.fancybox.close();
+                        $('.header-busket-wrap').removeClass('has-items');
+                    }
+
+                    busketAllItemsSum();
 
                 });
 
@@ -310,6 +366,16 @@
 
         /* /hover effects on busket icon */
 
+        /* continue shoping */
+
+            $(document).on('click', '.continue-buing a', function(){
+
+                $.fancybox.close();
+
+            });
+
+        /* /continue shoping */
+
     };
 
 /* /busket skripts */
@@ -324,6 +390,100 @@
 
 /* /expresion for numbers with spaces */
 
+/* header bottom scripts */
+
+    function headerBottom(){
+
+        $('.header-mobile-catalog-wrap, .header-mobile-catalog-wrap li').hover(
+            function(){
+
+                if($(window).width() > 666){
+                    $(this).find('>ul').stop().slideDown(300);
+                }
+
+            },
+            function(){
+                if($(window).width() > 666){
+
+                    if(!$(this).is('.header-mobile-catalog-wrap') && !$(this).is('.show')){
+                        $(this).find('>ul').stop().slideUp(300);
+
+                    }
+                }
+            }
+        );
+
+        $('.mobile-catalog-button, .header-catalog p').click(function(){
+
+            if($(window).width() <= 666){
+                if($(this).is('.active')){
+                    $(this).removeClass('active');
+                    $(this).parent().find('>ul').slideUp(300);
+                }else{
+                    $(this).addClass('active');
+                    $(this).parent().find('>ul').slideDown(300);
+                }
+            }
+
+        });
+
+        $(window).resize(function(){
+            if($(window).width() > 666){
+                $('ul').removeAttr('style');
+                $('.header-mobile-catalog-wrap .active').removeClass('active');
+            }
+        });
+
+    }
+
+/* header bottom scripts */
+
+/* right-column sizes */
+
+    /* column-script - index-right-column, goods-right-column, catalog-right-column */
+
+    function rightColumnSizes(){
+
+        function rightSizeScript(){
+
+            if($(window).width() > 666){
+
+                if($('.column-script').is('.goods-right-column') && $(window).width() < 800){
+
+                    $('.column-script').attr('style','width:100%; min-height:0;');
+                    $('.header-catalog>ul>li').eq(0).removeClass('show');
+
+                }else{
+                    var mboxWidth = $('.mbox').width();
+                    var columnWidth = $('.header-catalog>ul>li').eq(0).outerWidth();
+                    var columnHeight = $('.header-catalog>ul>li').eq(0).find('>ul').height();
+                    var rightBlockWidth = mboxWidth - columnWidth;
+
+                    $('.header-catalog>ul>li').eq(0).addClass('show');
+
+                    $('.column-script').attr('style','width:' + rightBlockWidth + 'px; min-height:'+ columnHeight+'px;');
+
+                }
+
+            }else{
+                $('.column-script').attr('style','width:100%; min-height:0;');
+                $('.header-catalog>ul>li').eq(0).removeClass('show');
+            }
+
+        }
+
+        rightSizeScript();
+
+        $(window).resize(function(){
+
+            rightSizeScript();
+
+        });
+
+    };
+
+/* /right-column sizes */
+
 
 $(document).ready(function(){
 
@@ -331,6 +491,8 @@ $(document).ready(function(){
     headerCatalogAdaptation();
     loginizationEvents();
     busketScripts();
+    headerBottom();
+    rightColumnSizes();
 
 });
 
