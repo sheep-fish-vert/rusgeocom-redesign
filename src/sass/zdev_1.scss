@@ -124,7 +124,7 @@
                                         .header-loginization-close-icon{top:0;}
                                     }
                                 }
-                                .header-loginization-form{position:absolute;top:100%;right: 0;width: 250px;display: block;z-index: 1;background-color: #fff;display: none;
+                                .header-loginization-form{position:absolute;top:100%;right: 0;width: 250px;display: block;z-index: 1;background-color: #fff;box-shadow:0 2px 5px 0 rgba(0, 0, 0, .25);display: none;
 
                                     .header-loginization-title{font-weight: 700;font-size: 16px;color: #4a7f95;line-height: 26px;padding:5px 10px 8px 20px;border-bottom: 1px solid #ebeff0;}
 
@@ -314,7 +314,7 @@
                         /* header-busket-list */
 
                             .header-busket-list-main{position: absolute;top:100%;right: 0;width: 400px;padding-top:20px;display:none;
-                                .header-busket-list{background-color:#fff;padding: 15px 20px 10px 10px;position: relative;
+                                .header-busket-list{background-color:#fff;padding: 15px 20px 10px 10px;position: relative;box-shadow:0 2px 5px 0 rgba(0, 0, 0, .25);
                                     &:before{content:'';display: block;position: absolute;width: 0;height: 0;border-width: 0 10px 10px 10px;border-style:solid;border-color:transparent transparent #fff transparent;bottom:100%;right: 10px;transition:bottom 300ms ease;}
                                 }
                             }
