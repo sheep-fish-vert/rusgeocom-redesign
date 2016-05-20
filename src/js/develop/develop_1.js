@@ -435,7 +435,11 @@
 
         /* /click on catalog item on mobile */
 
+        /* header-search focus */
 
+
+
+        /* /header-search focus */
 
         /* clear attr's by window resize */
 
@@ -448,7 +452,7 @@
             }
         });
 
-        /* clear attr's by window resize */
+        /* /clear attr's by window resize */
 
     }
 
