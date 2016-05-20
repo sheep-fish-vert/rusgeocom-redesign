@@ -390,12 +390,54 @@ function goodsSliders(){
   });
 }
 
+function filterColumn(){
+  $(document).on('click', '.filter-item-title', function(event) {
+    $(this).parent().toggleClass('active');
+    $(this).siblings('.filter-item-container').stop().slideToggle();
+  });
 
+  $(document).on('click', '.filter-show-more', function(event) {
+      $(this).addClass('active');
+  });
+
+
+
+  function jquerySliderPrice(){
+    var minVal = parseFloat($( "#slider-price-amount" ).data('min'));
+    var maxVal = parseFloat($( "#slider-price-amount" ).data('max'));
+
+    var firstVal = parseFloat($( "#slider-price-amount" ).data('first'));
+    var lastVal = parseFloat($( "#slider-price-amount" ).data('last'));
+
+
+
+    $( "#slider-price-range" ).slider({
+      range: true,
+      min: minVal,
+      max: maxVal,
+      values: [ firstVal, lastVal ],
+      slide: function( event, ui ) {
+        $( "#slider-price-amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+        $( "#slider-price-range span").first().html('<b>'+ui.values[ 0 ]+'</b>');
+        $( "#slider-price-range span").last().html('<b>'+ui.values[ 1 ]+'</b>');
+      }
+    });
+    $( "#slider-price-amount" ).val($( "#slider-price-range" ).slider( "values", 0 ) +
+      " " + $( "#slider-price-range" ).slider( "values", 1 ) );
+
+    $( "#slider-price-range span").first().html( "<b>"+$( "#slider-price-range" ).slider( "values", 0 )+"</b>");
+    $( "#slider-price-range span").last().html( "<b>"+$( "#slider-price-range" ).slider( "values", 1 )+"</b>");
+  }
+
+  jquerySliderPrice();
+
+}
 
 
 
 
 $(document).ready(function(){
+  filterColumn();
   goodsSliders();
   swithTub();
   cardPopup();

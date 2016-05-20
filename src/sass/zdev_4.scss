@@ -422,3 +422,86 @@
         &.hide{position: relative;bottom: 0;left:0;visibility: hidden;opacity: 0;z-index: -10;height: 0;}
     }
 }
+
+// header catalog filter
+.header-filter{border:none !important;background-color: transparent !important;
+    &>li>ul{left: calc(100% - 0px) !important;}
+    li:not(:first-child){background-color: #fff;margin-right: 15px;}
+    &>li{
+        &:hover{box-shadow: none !important;}
+    }
+}
+.catalog-filter{padding-top: 10px !important;
+    &+ul{position: relative;}
+    .catalog-filter-item{background-color: #fff;padding-right: 0 !important;margin-bottom: 10px;border:1px solid #f2f2f2;}
+    .catalog-filter-title{font-size: 18px;color: #38393a;padding-bottom: 10px;font-weight: 400;padding: 10px 8px;}
+    .catalog-filter-link{
+        ul{}
+        li{}
+        a{display: block;padding: 8px;background-color: #fff;
+            &:hover{background-color: #eef6fb;text-decoration: none;}
+        }
+    }
+
+    .filter-form{padding: 10px 0px;
+        .filter-item{padding: 0px 10px;border-bottom: 1px solid #f2f2f2;
+            &:last-child{border-bottom: none;
+                .filter-item-title{margin-bottom: 0;}
+            }
+            &.active{
+                .filter-item-title{
+                    &:after,&:before{transform: rotate(50deg);}
+                    &:before{transform: rotate(-50deg);}
+                }
+            }
+        }
+        .filter-item-title{font-weight: bold;font-size: 14px;color: #4d4d4d;padding: 2px 0px 7px;position: relative;cursor: pointer;margin-top: 8px;
+            &::selection{display: none;}
+            &:after,&:before{content: '';position: absolute;width: 6px;height: 2px;background-color: #4d4d4d;top: 8px;right: 21px;transform: rotate(-50deg);}
+            &:before{transform: rotate(50deg);right: 25px;}
+        }
+        .filter-item-container{display: flex;flex-wrap:wrap;
+            .item{width: 50%;position: relative;overflow: hidden;display: flex;margin-bottom: 10px;
+                label{display: flex;align-items:baseline;cursor: pointer;}
+                input{position: absolute;left: -1000px;
+                    &:checked+span{
+                        &:after,&:before{opacity: 1;}
+                    }
+                }
+                span{height: 11px;width: 11px;border:1px solid #cfcfcf;display: inline-block;position: relative;
+                    &:after,&:before{content: '';position: absolute;width: 5px;height: 2px;background-color: #4d4d4d;top: 4px;right: 1px;transform: rotate(-50deg);opacity: 0;}
+                    &:before{transform: rotate(50deg);width: 2px;right: 5px;}
+                }
+                b{font-weight: 400;color: #4d4d4d;font-size: 14px;margin: 0 4px;}
+                i{font-style: normal;color: #b7b7b7;font-size: 12px;}
+            }
+        }
+        .filter-show-more{display: flex;flex-wrap:wrap;width: 100%;
+            &.active{
+                .filtrer-show-more-button{display: none;}
+                .item{display: block;}
+            }
+            .item{display: none;}
+            .filtrer-show-more-button{width: 100%;margin-bottom: 10px;color: #95a5a6;font-weight: normal;padding-left: 15px;position: relative;
+                span{cursor: pointer;}
+                i{font-style: normal;color: #b7b7b7;font-size: 12px;}
+                &:after,&:before{content: '';position: absolute;width: 6px;height: 2px;background-color: #95a5a6;top: 6px;left: 5px;transform: rotate(-50deg);}
+                &:before{transform: rotate(50deg);left: 2px;}
+            }
+        }
+
+        .slider-price-wrap{position: relative;width: 100%;min-height: 50px;display: flex;align-items:center;padding: 0 10px;
+            #slider-price-range{width: 100%;border-radius: 8px;background-color: rgb(245, 245, 245);height: 19px;
+                .ui-slider-range{background: linear-gradient(to right, #489282 0%,#38748a 100%);border-radius: 8px;
+                    &:after{position: absolute;height: 100%;content: '';width: calc(100% + 20px);top: 0;left: -10.2px;border-radius: 8px;background: linear-gradient(to right, #489282 0%,#38748a 100%);}
+                }
+                .ui-slider-handle{height: 16px;top: 0px;background: #fff;border-radius: 50%;width: 16px;border:none;z-index: 10;
+                    &:first-child{background-color: pink;}
+                    &.ui-state-active{border:none;}
+                    b{position: absolute;bottom: -18px;color: #b8b8b8;font-size: 12px;font-weight: 400;left: 50%;transform: translateX(-50%);}
+                }
+            }
+            #slider-price-amount{position: absolute;top: -9999px;}
+        }
+    }
+}
