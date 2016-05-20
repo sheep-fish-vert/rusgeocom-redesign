@@ -336,7 +336,7 @@
 
                 .header-mobile-catalog-wrap{
                     &>ul{list-style: none;padding: 0;margin: 0;
-                        &>li{display: flex;flex-direction:row-reverse;justify-content: space-between;align-items: center;}
+                        &>li{display: flex;flex-direction:row-reverse;justify-content: space-between;align-items: center;flex-wrap:wrap;}
                     }
                 }
 
