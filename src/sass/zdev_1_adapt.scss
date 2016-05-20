@@ -180,8 +180,8 @@
                                             }
                                         }
                                     }
-                                    &>p{
-                                        .catalog-list-arrow{width: 11px;height: 11px;
+                                    &>p{position: relative;
+                                        .catalog-list-arrow{width: 11px;height: 11px;position: absolute;right: 0px;top:calc(50% - 6px);
                                             &:before, &:after{width: 11px;height: 3px;transform:rotate(0deg) translateZ(0px);top:calc(50% - 2px);left:0;}
                                             &:before{top:calc(50% - 2px);left:50%;}
                                             &:after{transform:rotate(90deg);}
