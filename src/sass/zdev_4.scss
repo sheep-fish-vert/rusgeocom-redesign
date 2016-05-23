@@ -12,6 +12,18 @@
             .subitem_name{text-transform: uppercase;text-decoration: underline;font-family: 'Open Sans';font-weight: 600;font-size: 14px;line-height: 24px;}
         }
     }
+
+    .middle-goods{
+        .goods-items{margin-bottom: 10px;}
+            .title{justify-content: center;position: relative;
+                a{position: absolute;right: 0;top: 50%;transform: translateY(-50%);}
+            }
+            .goods-wrap.column-script{min-height: auto !important;}
+            &:after{display: none;}
+            .goods-items{}
+            .goods-item{width: 33.33%;}
+    }
+
 }
 
 // title
@@ -68,9 +80,7 @@
 
 }
 
-.middle-goods{
-    .goods-items{margin-bottom: 10px;}
-}
+
 
 // brends
 .brends{overflow: hidden;
@@ -428,7 +438,8 @@
 // header catalog filter
 .header-filter{border:none !important;background-color: transparent !important;
     &>li>ul{left: calc(100% - 0px) !important;}
-    li:not(:first-child){background-color: #fff;margin-right: 15px;}
+    li:not(:first-child){background-color: #fff;}
+    li:first-child{padding-right: 0 !important;background-color: transparent !important; border-right: none !important;}
     &>li{
         &:hover{box-shadow: none !important;}
     }
