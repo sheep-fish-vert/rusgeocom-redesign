@@ -5,8 +5,11 @@ function mainSlider(){
                 setTimeout(function(){
                     if( !$(el).hasClass('slick-slider') && $(window).width() <= 666){
                       sliker();
-                    }else if( $(el).hasClass('slick-slider') ){
-                      $(el).slick("unslick");
+                    } //else if( $(el).hasClass('slick-slider') ){
+                    //   $(el).slick("unslick");
+                    // }
+                    if( $(window).width()> 666 && $('.goods-items.width-slider').is('.slick-initialized') ){
+                      $('.goods-items.width-slider').slick("unslick");
                     }
                 },500)
 
@@ -318,7 +321,10 @@ function swithTub(){
       });
     }
   }
-  tabToSelect();
+
+  if( $(window).width() < 666 ){
+    tabToSelect()
+  }
 
   $(window).resize(function(event) {
     if( $(window).width() < 666 ){
@@ -401,15 +407,13 @@ function filterColumn(){
   });
 
 
-
+  // jquery slider on price
   function jquerySliderPrice(){
     var minVal = parseFloat($( "#slider-price-amount" ).data('min'));
     var maxVal = parseFloat($( "#slider-price-amount" ).data('max'));
 
     var firstVal = parseFloat($( "#slider-price-amount" ).data('first'));
     var lastVal = parseFloat($( "#slider-price-amount" ).data('last'));
-
-
 
     $( ".slider-price-range" ).slider({
       range: true,
@@ -434,26 +438,58 @@ function filterColumn(){
 
   function cloneFilterOnMobile(){
 
-
-    function clonePaste(){
+    // clone filter in mobile
+    function clonePasteMobile(){
       $( ".slider-price-range" ).slider( "destroy" );
       var filter = $('.filter-form').clone(true, true);
       $('.filter-form').remove();
       filter.appendTo( $('.mobile-show.filter-show' ) );
-
+      $('.mobile-show.filter-show' ).addClass('active');
+      $('.filter-holder').removeClass('active');
       setTimeout(function(){
         jquerySliderPrice();
-      },100)
+      },500)
     }
+    // remove action skin on filter
     function remuveOpenTabs(){
-      $('.mobile-show.filter-show .filter-item').each(function(index, el) {
-
+      $('.mobile-show.filter-show .filter-item:not(:last)').each(function(index, el) {
+        $(el).removeClass('active');
+        $(el).find('.filter-item-container').stop().slideUp();
+      });
+    }
+    // add action skin on filter
+    function addOpenTabs(){
+      $('.mobile-show.filter-show .filter-item:not(:last)').each(function(index, el) {
+        $(el).addClass('active');
+        $(el).find('.filter-item-container').stop().slideDown();
       });
     }
 
+    // on resize clone/paste width a magic
+    $(window).resize(function(event) {
+      if ( $(window).width()>666  && !$('.filter-holder').is('.active') ){
+        $('.filter-holder').addClass('active');
+        $('.mobile-show.filter-show' ).removeClass('active');
 
+        $( ".slider-price-range" ).slider( "destroy" );
+        var filter = $('.filter-form').clone(true, true);
+        $('.filter-form').remove();
+        filter.appendTo('.filter-holder');
+
+        setTimeout(function(){
+          jquerySliderPrice();
+        },500);
+
+      }else if ( $(window).width()<=666 && !$('.mobile-show.filter-show' ).is('.active')){
+        clonePasteMobile();
+        remuveOpenTabs();
+      }
+    });
+
+    // mobile
     if( $(window).width()<=666 ){
-      clonePaste();
+      clonePasteMobile();
+      remuveOpenTabs();
     }
 
   }

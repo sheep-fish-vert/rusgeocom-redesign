@@ -494,7 +494,7 @@
 
         function rightSizeScript(){
 
-            if($(window).width() > 666){
+            if($(window).width()+$.scrollbarWidth() > 666){
 
                 if($('.column-script').is('.goods-right-column') && $(window).width() < 800){
 
