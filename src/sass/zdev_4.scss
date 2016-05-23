@@ -367,8 +367,8 @@
 // tabs
 .hav-tab .wrapper{min-height: 250px;
     .tabs{display: flex;}
-    .tab{padding: 5px 4px;font-size: 16px;color: #38393a;margin-right: 20px;text-align: center;cursor: pointer;border-bottom: 2px solid transparent;
-        &.active{font-weight: bold;border-bottom: 2px solid #6eabc5;}
+    .tab{padding: 5px 4px;font-size: 16px;color: #38393a;margin-right: 20px;text-align: center;cursor: pointer;border-bottom: 2px solid transparent;font-weight: 300;
+        &.active{font-weight: normal;border-bottom: 2px solid #6eabc5;}
     }
     .tabItem{
         &.hide{display: none !important;}
@@ -389,7 +389,7 @@
     .goods-title{font-size: 24px;}
 
     .tabContent{padding: 20px 0px;}
-    .goods-desc{font-size: 14px;color: #4e5050;font-size: 14px;line-height: 21px;padding-bottom: 15px;}
+    .goods-desc{font-size: 14px;color: #4e5050;font-size: 14px;line-height: 21px;padding-bottom: 15px;font-weight: 300;}
     .wrapper.tab-small{padding-top: 10px;
         .tabContent{padding: 0;}
         .tabs{position: relative;
@@ -398,9 +398,9 @@
         }
     }
     .goods-table-main{padding: 5px 0px;}
-    .goods-table-title{font-weight: 600;margin-bottom: 5px;padding-top: 10px;}
+    .goods-table-title{font-weight: 400;margin-bottom: 5px;padding-top: 10px;}
     .goods-table-wrap{color: #38393a;
-        .goods-table-row{display: flex;padding: 1px 0px;align-items: baseline;
+        .goods-table-row{display: flex;padding: 1px 0px;align-items: baseline;font-weight: 300;
             .goods-table-item:first-child{width: 74%;overflow: hidden;padding-right: 4px;
                 p{max-width: 290px;position: relative;display: inline-block;padding-bottom: 1px;margin: 0;
                     &:after{position: absolute;content: '';left: 0;height: 1px;width: 2000px;border-top: 1px dotted #000;bottom: 3px;z-index: 1;}
@@ -460,8 +460,8 @@
     }
     .filter-item-title{font-weight: bold;font-size: 14px;color: #4d4d4d;padding: 2px 0px 7px;position: relative;cursor: pointer;margin-top: 8px;
         &::selection{display: none;}
-        &:after,&:before{content: '';position: absolute;width: 6px;height: 2px;background-color: #4d4d4d;top: 8px;right: 21px;transform: rotate(-50deg);}
-        &:before{transform: rotate(50deg);right: 25px;}
+        &:after,&:before{content: '';position: absolute;width: 6px;height: 2px;background-color: #4d4d4d;top: 8px;right: -2px;transform: rotate(-50deg);}
+        &:before{transform: rotate(50deg);right: 2px;}
     }
     .filter-item-container{display: flex;flex-wrap:wrap;
         .item{width: 50%;position: relative;overflow: hidden;display: flex;margin-bottom: 10px;

@@ -1,3 +1,14 @@
+
+@media screen and (min-width: 1200px){
+    // header fix
+    .header .header-center .header-center-left .header-contacts-main{width: 80%;justify-content: center;}
+    .header-logo{align-self: inherit;width: 20%;}
+    .header .header-center .header-center-left{justify-content: space-between;align-items: center;}
+    .header .header-center .header-center-left .header-contacts-main .header-contact{width: 68%;display: flex;align-items: baseline;justify-content: space-around;padding: 6px;}
+}
+
+
+
 @media screen and (max-width: 1920px){
 
 }
