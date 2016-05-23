@@ -151,6 +151,11 @@
     .title{
         h5{}
         a{background-color: transparent;}
+
+        &.big{text-align: center;justify-content: center;padding: 15px 0px 10px;border-bottom: 1px solid #dadada;margin-bottom: 20px;
+            h2{font-size: 22px;margin-bottom: 0;}
+            a{display: block;}
+        }
     }
 
     // goods items
@@ -247,8 +252,16 @@
             &>.goods-tab>.wrapper>.tabs{}
             .tabContent{}
         }
-
     }
+
+    .mobile-show.filter-show{display: block;
+        .filter-form{background-color: #fff;
+            .filter-item{border-bottom: none;}
+        }
+    }
+
+    .breadcrumbs{display: none;}
+    .catalog-top-img{display: none;}
 
 }
 @media screen and (max-width: 479px){

@@ -411,27 +411,57 @@ function filterColumn(){
 
 
 
-    $( "#slider-price-range" ).slider({
+    $( ".slider-price-range" ).slider({
       range: true,
       min: minVal,
       max: maxVal,
       values: [ firstVal, lastVal ],
       slide: function( event, ui ) {
-        $( "#slider-price-amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-        $( "#slider-price-range span").first().html('<b>'+ui.values[ 0 ]+'</b>');
-        $( "#slider-price-range span").last().html('<b>'+ui.values[ 1 ]+'</b>');
+        $( ".slider-price-amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+        $( ".slider-price-range span").first().html('<b>'+ui.values[ 0 ]+'</b>');
+        $( ".slider-price-range span").last().html('<b>'+ui.values[ 1 ]+'</b>');
       }
     });
-    $( "#slider-price-amount" ).val($( "#slider-price-range" ).slider( "values", 0 ) +
+    $( ".slider-price-amount" ).val($( "#slider-price-range" ).slider( "values", 0 ) +
       " " + $( "#slider-price-range" ).slider( "values", 1 ) );
 
-    $( "#slider-price-range span").first().html( "<b>"+$( "#slider-price-range" ).slider( "values", 0 )+"</b>");
-    $( "#slider-price-range span").last().html( "<b>"+$( "#slider-price-range" ).slider( "values", 1 )+"</b>");
+    $( ".slider-price-range span").first().html( "<b>"+$( ".slider-price-range" ).slider( "values", 0 )+"</b>");
+    $( ".slider-price-range span").last().html( "<b>"+$( ".slider-price-range" ).slider( "values", 1 )+"</b>");
   }
 
   jquerySliderPrice();
 
+
+  function cloneFilterOnMobile(){
+
+
+    function clonePaste(){
+      $( ".slider-price-range" ).slider( "destroy" );
+      var filter = $('.filter-form').clone(true, true);
+      $('.filter-form').remove();
+      filter.appendTo( $('.mobile-show.filter-show' ) );
+
+      setTimeout(function(){
+        jquerySliderPrice();
+      },100)
+    }
+    function remuveOpenTabs(){
+      $('.mobile-show.filter-show .filter-item').each(function(index, el) {
+
+      });
+    }
+
+
+    if( $(window).width()<=666 ){
+      clonePaste();
+    }
+
+  }
+  cloneFilterOnMobile();
+
+
 }
+
 
 
 
