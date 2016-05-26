@@ -52,6 +52,13 @@
         .footer-map a{display: flex;}
         .footer-social{padding:0}
     }
+
+    // brends
+    .brends .brends-slider-wrap{padding: 0 4%;}
+    .brends .slick-prev{left: 10px;}
+    .brends .slick-next {right: 10px;}
+
+
 }
 @media screen and (max-width: 830px){
     // catalog-goods
@@ -88,6 +95,24 @@
             .tabContent{padding: 20px 15px;background-color: #fff;}
         }
 
+    }
+
+
+    // news
+    .news{
+        .news-wrap{flex-direction:column;background-color: transparent;border:none;
+            .item{width: 100%;min-height: auto;border: 1px solid #ecf0f1;margin-bottom: 15px;background-color: #fff;
+                 &:nth-child(4n){border-right: none;}
+                 .item-img{text-align: center;overflow: hidden;height: 120px;position: relative;
+                    a{display: inline-block;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);
+                        img{border-radius: 8px;max-width: none;}
+                    }
+                 }
+                 .item-time{padding: 15px 0 10px;font-family: "Open Sans",sans-serif;font-size: 12px;color: #ababab;}
+                 .item-title{font-size: 14px;font-family: "Open Sans",sans-serif;font-weight: 600;line-height: 1.1}
+                 .item-text{font-family: "Open Sans",sans-serif;color: #ababab;font-size: 12px;line-height: 1.2;}
+            }
+        }
     }
 }
 @media screen and (max-width: 767px){
@@ -187,22 +212,7 @@
         .slick-next{right: 10px;}
     }
 
-    // news
-    .news{
-        .news-wrap{flex-direction:column;background-color: transparent;border:none;
-            .item{width: 100%;min-height: auto;border: 1px solid #ecf0f1;margin-bottom: 15px;background-color: #fff;
-                 &:nth-child(4n){border-right: none;}
-                 .item-img{text-align: center;overflow: hidden;height: 120px;position: relative;
-                    a{display: inline-block;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);
-                        img{border-radius: 8px;max-width: none;}
-                    }
-                 }
-                 .item-time{padding: 15px 0 10px;font-family: "Open Sans",sans-serif;font-size: 12px;color: #ababab;}
-                 .item-title{font-size: 14px;font-family: "Open Sans",sans-serif;font-weight: 600;line-height: 1.1}
-                 .item-text{font-family: "Open Sans",sans-serif;color: #ababab;font-size: 12px;line-height: 1.2;}
-            }
-        }
-    }
+
 
     // footer
     .footer{

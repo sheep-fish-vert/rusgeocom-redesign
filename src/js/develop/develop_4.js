@@ -58,9 +58,15 @@ function sliderBends(){
           nextArrow:'<button type="button" class="slick-next border-spec-hover"></button>',
           responsive: [
               {
-                breakpoint: 768,
+                breakpoint: 992,
                 settings: {
                   slidesToShow: 4
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 3
                 }
               },
               {

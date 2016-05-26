@@ -1,3 +1,4 @@
+.main{overflow: hidden;}
 // top-block
 .top-block{margin-bottom: 20px;
     .item .top img{width: 100%;}
@@ -81,11 +82,12 @@
 }
 
 
-
 // brends
-.brends{overflow: hidden;
-    .brends-slider{background-color: #fff;}
-    .brends-slider-wrap{padding: 0 9%;margin-bottom: 0;}
+.brends{
+    .brends-slider{background-color: #fff;position: relative;
+        &:after{content: '';position: absolute;width: 5000px;height: 100%;background-color: #fff;top: 0;left: 50%;transform: translateX(-50%);}
+    }
+    .brends-slider-wrap{padding: 0 9%;margin-bottom: 0;position: relative;z-index: 2;}
     .brends-item{height: 110px;text-align: center;position: relative;overflow: hidden;border-bottom: 2px solid transparent;
         &:hover{border-bottom: 2px solid #3397d1;}
         a{display: block;}
@@ -103,8 +105,9 @@
 
 // news
 .news{margin-bottom: 25px;
-    .news-wrap{display: flex;align-content:center;justify-content:flex-start;border:1px solid #ecf0f1;background-color: #fff;
-        .item{width: 25%;border-right: 1px solid #ecf0f1;padding: 12px;min-height: 270px;overflow: hidden;    display: flex;flex-direction: column;
+    .news-wrap{display: flex;align-content:center;justify-content:flex-start;/*border:1px solid #ecf0f1;*/background-color: #fff;position: relative;
+        &:after{content: '';position: absolute;left: 50%;top: 0;transform: translateX(-50%);height: 100%;width: 5000px;background-color: #fff;}
+        .item{width: 25%;border-right: 1px solid #ecf0f1;padding: 12px;min-height: 270px;overflow: hidden;    display: flex;flex-direction: column;position: relative;z-index: 2;
              &:nth-child(4n){border-right: none;}
              .item-img{text-align: center;overflow: hidden;height: 120px;position: relative;
                 a{display: inline-block;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);
@@ -522,3 +525,20 @@
 
 .mobile-show.filter-show{display: none;}
 .filter-text-filtering{display: none;}
+
+
+// fix 26.05.2016
+.right-column.mbox.main-page{
+
+    .ceotext{margin-bottom: 30px;
+        .title{justify-content: center;}
+        .ceotext-wrap{position: relative;
+            &:after{content: '';position: absolute;left: 50%;top: 0;transform: translateX(-50%);height: 100%;width: 5000px;background-color: #fff;}
+            p{position: relative;z-index: 2;}
+        }
+    }
+    .title{justify-content: center;position: relative;
+        a{position: absolute;right: 0;top: 50%;transform: translateY(-50%);}
+    }
+
+}
