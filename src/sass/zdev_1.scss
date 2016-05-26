@@ -439,9 +439,8 @@
 
                                 /* header-catalog second level */
 
-                                    &>ul{display: none;position: absolute;width: 100%;top:100%;left:0;/*background-color: #fff;*/border:1px solid #e6e9eb;    padding-right: 15px;border-right: none;border-bottom: none;
-                                        &>li{position: relative;padding-right: 15px;transition:all 300ms ease;background-color: #fff;border-right:1px solid #e6e9eb;
-                                            &:last-child{border-bottom: 1px solid #e6e9eb;}
+                                    &>ul{display: none;position: absolute;width: 100%;top:100%;left:0;background-color: #fff;border:1px solid #e6e9eb;
+                                        &>li{position: relative;padding-right: 15px;transition:all 300ms ease;
                                             &>p{display: flex;align-items: center;justify-content: space-between;height: auto;height: auto;padding:12px 0;
                                                 a{padding: 0 5px 0 10px;font-family: 'Ubuntu', sans-serif;font-weight: 300;}
                                                 span{display: block;width: 6px;height: 10px;position: relative;
@@ -461,7 +460,7 @@
 
                                             /* header-catalog third level */
 
-                                                &>ul{display: none;position: absolute;left:calc(100% - 0px); top:0;background-color: #fff;width: 100%;box-shadow:0 0 4px 0 rgba(0, 0, 0, .16);z-index: 10;
+                                                &>ul{display: none;position: absolute;left:calc(100% - 10px); top:0;background-color: #fff;width: 100%;box-shadow:0 0 4px 0 rgba(0, 0, 0, .16);
                                                     &>li{padding:12px 10px 12px 10px;position: relative;
                                                         &:after{content:'';display: block;position: absolute;bottom: 0;left:5px;height: 1px;width: calc(100% - 10px);background-color: #e6e9eb;}
                                                         &:last-child{
