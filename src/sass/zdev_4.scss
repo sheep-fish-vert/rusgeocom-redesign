@@ -85,7 +85,7 @@
 // brends
 .brends{
     .brends-slider{background-color: #fff;position: relative;
-        &:after{content: '';position: absolute;width: 5000px;height: 100%;background-color: #fff;top: 0;left: 50%;transform: translateX(-50%);}
+        /*&:after{content: '';position: absolute;width: 5000px;height: 100%;background-color: #fff;top: 0;left: 50%;transform: translateX(-50%);}*/
     }
     .brends-slider-wrap{padding: 0 9%;margin-bottom: 0;position: relative;z-index: 2;}
     .brends-item{height: 110px;text-align: center;position: relative;overflow: hidden;border-bottom: 2px solid transparent;
@@ -106,7 +106,7 @@
 // news
 .news{margin-bottom: 25px;
     .news-wrap{display: flex;align-content:center;justify-content:flex-start;/*border:1px solid #ecf0f1;*/background-color: #fff;position: relative;
-        &:after{content: '';position: absolute;left: 50%;top: 0;transform: translateX(-50%);height: 100%;width: 5000px;background-color: #fff;}
+        /*&:after{content: '';position: absolute;left: 50%;top: 0;transform: translateX(-50%);height: 100%;width: 5000px;background-color: #fff;}*/
         .item{width: 25%;border-right: 1px solid #ecf0f1;padding: 12px;min-height: 270px;overflow: hidden;    display: flex;flex-direction: column;position: relative;z-index: 2;
              &:nth-child(4n){border-right: none;}
              .item-img{text-align: center;overflow: hidden;height: 120px;position: relative;
@@ -532,8 +532,8 @@
 
     .ceotext{margin-bottom: 30px;
         .title{justify-content: center;}
-        .ceotext-wrap{position: relative;
-            &:after{content: '';position: absolute;left: 50%;top: 0;transform: translateX(-50%);height: 100%;width: 5000px;background-color: #fff;}
+        .ceotext-wrap{position: relative;padding: 0px 10px;
+            /*&:after{content: '';position: absolute;left: 50%;top: 0;transform: translateX(-50%);height: 100%;width: 5000px;background-color: #fff;}*/
             p{position: relative;z-index: 2;}
         }
     }
