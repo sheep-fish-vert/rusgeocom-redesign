@@ -528,7 +528,7 @@
 
         });
 
-    };
+    }
 
 /* /right-column sizes */
 

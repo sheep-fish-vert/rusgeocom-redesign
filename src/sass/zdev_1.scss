@@ -488,6 +488,14 @@
             }
 
         /* /header-bottom */
+        .header-contact-telefone.mobile-show{font-weight: 700;font-size: 14px;display: none;color: white;
+            a{color:#fff;position: relative;display: inline-block;line-height: 1.2;
+                &:after{content: '';display: block;padding: absolute;top:100%;left: 0;height: 1px;width: 100%;background-color: #fff;transform:scale(0);transition:transform 300ms ease;}
+                &:hover{text-decoration: none;
+                    &:after{transform:scale(1);}
+                }
+            }
+        }
 
     }
 
