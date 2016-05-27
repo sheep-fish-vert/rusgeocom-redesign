@@ -274,9 +274,11 @@
             .filter-item{border-bottom: none;background-color: #f5f7f6;padding: 0;margin:0 10px 10px;
                 &:last-child{background-color: #fff;}
             }
-            .filter-item-container{padding-top: 5px;}
+            .filter-item-container{padding-top: 5px;padding: 10px;}
             .filter-item-title{padding-top: 8px;padding-left: 10px;margin-bottom: 0;
                 &:after,&:before{top: 14px;}
+                &:after{right: 7px;}
+                &:before{right: 11px;}
             }
         }
         .filter-text-filtering{display: block;position: absolute;bottom: 0;left: 0;width: 100%;text-align: center;}
