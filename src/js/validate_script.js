@@ -268,6 +268,7 @@ $(document).ready(function(){
    validate('#call-popup .contact-form', {submitFunction:validationCall});
 
    validate('.login-form-enter');
+   validate('.login-form-enter-mobile');
    validate('.search-form');
 
    Maskedinput();
