@@ -78,7 +78,7 @@ img{vertical-align:bottom;border:0;max-width:100%;}
 
 .right-column{display: flex;justify-content:flex-end;align-content:flex-start;
     &.mbox:after{display: none;}
-    .right-column-wrap{width: 75%;}
+    .right-column-wrap{width: 75%;padding-left: 15px;}
 }
 
 /* /wraps styling*/
