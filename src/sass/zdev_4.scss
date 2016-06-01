@@ -534,3 +534,19 @@
 
 // fix
 .header-login-moblie{display: none;}
+
+// fix 1.06.2016
+.goods-aks{
+    .catalog-goods .goods-item{margin-bottom: 0;}
+    .goods-item:nth-child(4n){border-right: 1px solid #ecf0f1;}
+}
+
+.comment{
+    .comment-content{padding-top: 20px;
+        label{display: inline-block;min-width: 60px;padding: 0 10px;width: 30%;    font-weight: 400;}
+        input,textarea{width: 70%;border: 2px solid #37728b;color: #37728b;font-size: 14px;}
+        textarea{}
+        .form_input,.submit-wrap{display: flex;width: 550px;margin-bottom: 20px;}
+        .submit-wrap{justify-content:flex-end;}
+    }
+}
