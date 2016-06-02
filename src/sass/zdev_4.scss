@@ -537,16 +537,27 @@
 
 // fix 1.06.2016
 .goods-aks{
-    .catalog-goods .goods-item{margin-bottom: 0;}
-    .goods-item:nth-child(4n){border-right: 1px solid #ecf0f1;}
+    .catalog-goods .goods-item{/*margin-bottom: 0;*/}
+    .goods-item:nth-child(4n){/*border-right: 1px solid #ecf0f1;*/}
+    .goods-item:last-child{border-right: 1px solid #ecf0f1;}
 }
 
 .comment{
-    .comment-content{padding-top: 20px;
-        label{display: inline-block;min-width: 60px;padding: 0 10px;width: 30%;    font-weight: 400;}
-        input,textarea{width: 70%;border: 2px solid #37728b;color: #37728b;font-size: 14px;}
-        textarea{}
-        .form_input,.submit-wrap{display: flex;width: 550px;margin-bottom: 20px;}
+    .comment-content{padding-top: 40px;
+        label{display: inline-block;min-width: 60px;padding: 5px 10px;width: 30%;    font-weight: 400;font-family: "Open Sans";}
+        input,textarea{width: 70%;border: 2px solid #6EABC5;color: #6EABC5;font-size: 14px;padding: 5px 10px;display: block;color: #000;
+            &.error{border-color: red;}
+        }
+        textarea{resize:none;height: 100px;}
+        .form_input,.submit-wrap{display: flex;max-width: 550px;margin-bottom: 20px;width: 100%;}
         .submit-wrap{justify-content:flex-end;}
+        .contact-submit{width: 100%;max-width: 165px;height: 41px;justify-content: center;align-content: center;display: flex;text-align: center;text-decoration: none;transition: all ease .2s;border: 2px solid #6EABC5;color: #6EABC5;font-size: 14px;background-color: #fff;
+            &:hover{background-color: #6EABC5;color: #fff;}
+        }
+    }
+    .comment-done{padding-top: 40px;
+        .item{border-top: 2px solid #6EABC5;padding-top: 15px;padding-bottom: 5px;line-height: 1.2;
+            &:last-child{border-bottom: 2px solid #6EABC5;}
+        }
     }
 }

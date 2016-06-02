@@ -270,6 +270,7 @@ $(document).ready(function(){
    validate('.login-form-enter');
    validate('.login-form-enter-mobile');
    validate('.search-form');
+   validate('.comment form');
 
    Maskedinput();
    fancyboxForm();
