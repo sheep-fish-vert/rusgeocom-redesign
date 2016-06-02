@@ -34,6 +34,8 @@
         h5{font-size: 22px;}
         a{display: inline-block;padding: 3px 14px;background-color: #fff;border-radius: 18px;font-family: 'Open Sans',sans-serif;}
     }
+    .comment .comment_add{border-radius: 0px;}
+
 
     // news
     .news{
@@ -311,6 +313,16 @@
         .header-loginization .header-loginization-icon{margin:0 auto;}
     }
 
+    // rewiev
+    .rewiew-popup{width: 95% !important;left: 50% !important;transform: translateX(-50%) !important;
+        .fancybox-inner{width: 100% !important;}
+    }
+    #rewievPopup{width: 100%;padding: 30px 15px;}
+    #rewievPopup .rewievPopup-wrap{display: block;}
+    #rewievPopup .form_input, #rewievPopup .submit-wrap{max-width: 100%;}
+    #rewievPopup label{width: 90px;}
+    #rewievPopup input, #rewievPopup textarea,#rewievPopup .rating{max-width: 100% !important;width: calc(100% - 120px) !important;}
+
 }
 @media screen and (max-width: 479px){
     // catalog-goods
@@ -366,6 +378,19 @@
             }
         }
     }
+
+    // comment
+    .comment{
+        .comment-done .aside_left{padding-right: 10px;
+            .item-town{word-break: break-word;font-size: 10px;}
+            .item-date{font-size: 10px;}
+            .item-name{font-size: 12px;}
+        }
+        .comment-done .aside_right {
+            .item-test{font-size: 14px;}
+        }
+    }
+
 }
 @media screen and (max-width: 320px){
 

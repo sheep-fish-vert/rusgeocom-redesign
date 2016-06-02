@@ -1,40 +1,75 @@
 <div class="comment">
-    <div class="title"><span>Коментарии</span></div>
+    <div class="title">
+        <span>Коментарии</span>
+        <!-- function rewiewPopup();
+            validate('#rewievPopup form', {submitFunction:validationCall});
+        -->
+        <a href="#rewievPopup" class="comment_add">
+            <img src="images/comment-done-button.png" alt="">
+            <span>Написать отзыв</span>
+        </a>
+    </div>
     <div class="comment-content">
-        <form action="" name="" class="comment-form">
-            <input type="hidden" value="" class="comment-form-hidden">
-            <div class="form_row">
-                <div class="form_input">
-                    <label for="contact_name">*Имя</label>
-                    <input type="text" name="contact_name" id="contact_name" required="required" value="">
-                </div>
-            </div>
-            <div class="form_row">
-                <div class="form_input">
-                    <label for="contact_name">*Cообщение</label>
-                    <textarea  name="conmment" id="comment" required="required" value=""></textarea>
-                </div>
-            </div>
-            <div class="form_row submit-wrap">
-
-                <button type="submit" class="contact-submit">
-                    <span>Отправить</span>
-                </button>
-
-                <div class="message-wrap">
-                    <!-- -->
-                </div>
-
-            </div>
-        </form>
         <div class="comment-done">
             <div class="item">
-                <b>Петр Петенька,<span>13 июня 2015 г. 14:55</span></b>
-                <p>Заказал, все подошло. Спасибо за проделаную работу!</p>
+                <div class="aside_left">
+                    <div class="item-name">Светлана</div>
+                    <div class="item-town">Новосибирск</div>
+                    <div class="item-date">26.03.2016</div>
+                </div>
+                <div class="aside_right">
+                    <div class="item-star">
+                        <div class="star starFull"></div>
+                        <div class="star starFull"></div>
+                        <div class="star starFull"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                    <div class="item-test">
+                        <p>Классный гриль, и мясо обалденно жарит и пластины сменные как нельзя кстати, поджарить овощи к мясу, на них и овощи жарить и бутерброды горячие тоже можно делать, быстро достаточно нагревается и мясо сочное и прожаренное выходит)))) ШИКАРНЫЙ ГРИЛЬ!!!!</p>
+                    </div>
+                    <div class="item-usefull">
+                        <!-- function comentRewiew() -->
+                        <div class="item-usefull-question">
+                            Отзыв полезен?
+                            <a href="#" class="item-usefull-true item-usefull-button" data-answer="true">Да</a>
+                            <a href="#" class="item-usefull-false item-usefull-button" data-answer="false">Нет</a>
+                        </div>
+                        <div class="item-usefull-text">
+                            2 человека считают этот отзыв полезным
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="item">
-                <b>Петр Петенька,<span>13 июня 2015 г. 14:55</span></b>
-                <p>Заказал, все подошло. Спасибо за проделаную работу!Заказал, все подошло. Спасибо за проделаную работу!Заказал, все подошло. Спасибо за проделаную работу!Заказал, все подошло. Спасибо за проделаную работу!Заказал, все подошло. Спасибо за проделаную работу!Заказал, все подошло. Спасибо за проделаную работу!Заказал, все подошло. Спасибо за проделаную работу!Заказал, все подошло. Спасибо за проделаную работу!Заказал, все подошло. Спасибо за проделаную работу!Заказал, все подошло. Спасибо за проделаную работу!</p>
+                <div class="aside_left">
+                    <div class="item-name">Ксюша</div>
+                    <div class="item-town">Томск</div>
+                    <div class="item-date">25.03.2016</div>
+                </div>
+                <div class="aside_right">
+                    <div class="item-star">
+                        <div class="star starFull"></div>
+                        <div class="star starFull"></div>
+                        <div class="star starFull"></div>
+                        <div class="star starFull"></div>
+                        <div class="star starFull"></div>
+                    </div>
+                    <div class="item-test">
+                        <p>Отличный гриль, купили с мужем на дачу, классный потому что мы и мясо на гриле хорошо и обалденно вкусно мммм... пожарили, и корочка вышла отличная и не сгорела. И потом еще делали горячие бутеры, а у нас на даче были друзья и поэтому делали сразу много, потом еще и помидоры жарили к мясу на плоских пластинах. Классно что это и гриль и плита, больше возможностей))))</p>
+                    </div>
+                    <div class="item-usefull">
+                        <!-- function comentRewiew() -->
+                        <div class="item-usefull-question">
+                            Отзыв полезен?
+                            <a href="#" class="item-usefull-true item-usefull-button" data-answer="true">Да</a>
+                            <a href="#" class="item-usefull-false item-usefull-button" data-answer="false">Нет</a>
+                        </div>
+                        <div class="item-usefull-text">
+                            6 человека считают этот отзыв полезным
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

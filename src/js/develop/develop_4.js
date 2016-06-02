@@ -94,7 +94,7 @@ function sliderBends(){
 
 }
 function ratingScript(){
-    $(document).on('mouseenter', '.rating label', function(){
+    $(document).on('mouseenter', 'footer .rating label', function(){
         var parent=$(this).parent();
         parent.find('.form-input').removeClass('hovered');
         var index=$(this).index();
@@ -102,12 +102,12 @@ function ratingScript(){
             parent.find('label').eq(i).find('.form-input').addClass('hovered');
         }
     });
-    $(document).on('mouseleave', '.rating:not(.static) label', function(){
+    $(document).on('mouseleave', 'footer .rating:not(.static) label', function(){
         var parent=$(this).parent();
         parent.find('.form-input').removeClass('hovered');
     });
 
-    $(document).on('change','.rating input', function(){
+    $(document).on('change','footer .rating input', function(){
         var parent=$(this).parents('.rating');
         parent.find('.form-input').removeClass('active');
         var index=$(this).parents('label').index();
@@ -122,7 +122,6 @@ function ratingScript(){
           data: parseFloat(index+1)
         })
         .done(function(data) {
-          console.log("rating "+ parseFloat(index+1) );
         });
     });
 }
@@ -253,7 +252,7 @@ function cardPopup(){
         }
         var allSum=str.text()+' .-';
         $('.serial-sum-val').text(allSum);
-    };
+    }
 
     $(document).on('change','.serial-label input',function(){
         var parent = $(this).parents('.serial-label');
@@ -275,7 +274,7 @@ function cardPopup(){
         $('.serial-form-acordion-bottom .serial-label').removeClass('active');
         $('.serial-form-acordion-bottom').slideUp(300);
 
-        $(this).parents('.serial-form-acrodion-top').find('.serial-label').addClass('active').parents('.serial-form-row').addClass('active');;
+        $(this).parents('.serial-form-acrodion-top').find('.serial-label').addClass('active').parents('.serial-form-row').addClass('active');
 
         if($(this).parents('.serial-form-acordion-wrap').is('.has-bottom')){
             $(this).parents('.serial-form-acrodion-top').addClass('active');
@@ -283,8 +282,7 @@ function cardPopup(){
         }
         sumSerial();
     });
-
-};
+}
 
 function swithTub(){
 
@@ -500,15 +498,80 @@ function filterColumn(){
 
   }
   cloneFilterOnMobile();
+}
 
+function comentRewiew(){
+  $(document).on('click', '.item-usefull-button', function(event) {
+    event.preventDefault();
+
+    var questionHolder = $(this).parent();
+    var answer = $(this).attr('data-answer');
+
+    $.ajax({
+      url: reviewed_helpful,
+      type: 'POST',
+      data: answer
+    })
+    .done(function(data) {
+      questionHolder.empty();
+      questionHolder.html(data);
+    })
+    .fail(function() {
+      console.log("error function comentRewiew()");
+    });
+
+  });
+}
+
+function rewiewPopup(){
+  //copy rating script
+  $(document).on('mouseenter', '#rewievPopup .rating label', function(){
+        var parent=$(this).parent();
+        parent.find('.form-input').removeClass('hovered');
+        var index=$(this).index();
+        for(var i=0;i<=index;i++){
+            parent.find('label').eq(i).find('.form-input').addClass('hovered');
+        }
+    });
+    $(document).on('mouseleave', '#rewievPopup .rating:not(.static) label', function(){
+        var parent=$(this).parent();
+        parent.find('.form-input').removeClass('hovered');
+    });
+
+    $(document).on('change','#rewievPopup .rating input', function(){
+        var parent=$(this).parents('.rating');
+        parent.find('.form-input').removeClass('active');
+        var index=$(this).parents('label').index();
+
+        for(var i=0;i<=index;i++){
+            parent.find('label').eq(i).find('.form-input').addClass('active');
+        }
+    });
+}
+
+function rewiewFancybox(){
+  $('.comment_add').fancybox({
+    wrapCSS:'rewiew-popup',
+    padding:0,
+    fitToView:true,
+    autoSize:true,
+    helpers:  {
+        overlay : {
+            css:{
+                'background':'rgba(0, 0, 0, 0.32)'
+            }
+        }
+    }
+});
 
 }
 
 
 
-
-
 $(document).ready(function(){
+  rewiewFancybox();
+  rewiewPopup();
+  comentRewiew();
   filterColumn();
   goodsSliders();
   swithTub();

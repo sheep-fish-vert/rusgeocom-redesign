@@ -3,41 +3,9 @@
     <div id="call_success">
         <div class="call-success">
              <div class="call_success">
-                 <div class="call-title">Спасибо за заявку!</div>
-                 <div class="call-subtitle">Мы свяжемся с Вами в ближайшее время</div>
+                 <div class="call-title">Спасибо за отзыв!</div>
              </div>
         </div>
-    </div>
-
-    <div id="call-popup">
-        <form action="ajax.php" name="" class="contact-form">
-            <div class="contact-form-title">
-                <h5>Lorem ipsum dolor.</h5>
-            </div>
-            <div class="contact-form-row cfix">
-                <div class="contact-form-item">
-                    <div class="contact-form-item-input form_row">
-                        <div class="form_input">
-                            <input type="text" name="contact_name" required="required" value="" placeholder="Ваше Имя">
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-item">
-                    <div class="contact-form-item-input form_row">
-                        <div class="form_input">
-                            <input type="text" name="contact_tel" value="" required="required" placeholder="Ваш номер" class="tel-mask">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-form-row cfix">
-                <div class="contact-form-item">
-                    <button type="submit" class="contact-submit">
-                        <span>Отправить заявку</span>
-                    </button>
-                </div>
-            </div>
-        </form>
     </div>
 
     <div id="serailPopup">
@@ -248,4 +216,50 @@
         </div>
     </div>
 
+    <div id="rewievPopup">
+        <div class="rewievPopup-wrap">
+            <form name="" class="comment-form">
+                <input type="hidden" value="" class="rewiev-form-hidden">
+
+                <div class="rewievPopup_title">
+                    Написать отзыв
+                </div>
+                <div class="form_row">
+                    <div class="form_input">
+                        <label>Ваше имя</label>
+                        <input type="text" name="rewiev_name" id="rewiev_name" required="required" value="">
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_input">
+                        <label>Город</label>
+                        <input type="text" name="rewiev_town" id="rewiev_town"  value="">
+                    </div>
+                </div>
+                 <div class="form_row">
+                    <div class="form_input">
+                        <label>Оценка:</label>
+                        <div class="rating cfix">
+                            <label><span class="form-input active"><input type="radio" name="rewiev_star" value="1"><span class="radio-icon"></span></span></label>
+                            <label><span class="form-input active"><input type="radio" name="rewiev_star" value="2"><span class="radio-icon"></span></span></label>
+                            <label><span class="form-input active"><input type="radio" name="rewiev_star" value="3"><span class="radio-icon"></span></span></label>
+                            <label><span class="form-input active"><input type="radio" name="rewiev_star" value="4"><span class="radio-icon"></span></span></label>
+                            <label><span class="form-input"><input type="radio" name="rewiev_star" value="5"><span class="radio-icon"></span></span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_input">
+                        <label>Отзыв</label>
+                        <textarea  name="rewiev_conmment" id="rewiev_comment" required="required" value=""></textarea>
+                    </div>
+                </div>
+                <div class="form_row submit-wrap">
+                    <button type="submit" class="contact-submit">
+                        <span>Отправить</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
