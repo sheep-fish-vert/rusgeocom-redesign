@@ -15,18 +15,17 @@
 @media screen and (max-width: 1280px){
 
 }
+@media screen and (max-width: 1160px){
+    .top-block .three-items .subitem a{padding: 10px 11px;}
+}
 @media screen and (max-width: 1024px){
 
 }
 @media screen and (max-width: 992px){
     // top-block
-    .top-block{
-        .three-items{
-            .subitem{
-                a{text-decoration: none;min-height: auto;height: 163px;padding: 9px 9px;}
-                .subitem_img img{max-width: 36%;}
-            }
-        }
+    .top-block .three-items .subitem a{min-height: 190px;
+        .subitem_img{text-align: center;}
+        svg{height: 185px;margin: 0 auto;display: inline-block;}
     }
 
     // title
@@ -67,9 +66,9 @@
 
     // top-block
     .top-block{
-        .three-items{flex-direction:column;
-            .subitem{width: 100%;
-                a{height: 100px;flex-direction: row;}
+        .three-items{
+            .subitem{width: 50%;justify-content: flex-start;
+                a{/*height: 100px;flex-direction: row;*/}
                 .subitem_img img{max-width: 60%;}
                 .subitem_other{align-self: center;}
             }
@@ -322,6 +321,15 @@
     #rewievPopup .form_input, #rewievPopup .submit-wrap{max-width: 100%;}
     #rewievPopup label{width: 90px;}
     #rewievPopup input, #rewievPopup textarea,#rewievPopup .rating{max-width: 100% !important;width: calc(100% - 120px) !important;}
+
+        // top-block
+    .top-block{
+        .three-items{
+            .subitem{width: 100%;justify-content: flex-start;
+                a{}
+            }
+        }
+    }
 
 }
 @media screen and (max-width: 479px){

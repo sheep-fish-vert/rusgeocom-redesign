@@ -4,7 +4,9 @@
     .item{padding-top: 15px;}
     .item .top img{width: 100%;}
     .three-items{display: flex;align-content:flex-start;justify-content:center;flex-wrap:wrap;
-        .subitem{width: 33.33%;overflow: hidden;
+        .subitem{width: 20%;overflow: hidden;
+            &:nth-child(odd){background-color: #f7f8f7;}
+            &:nth-child(even){background-color: #f1f1f1;}
             &:hover{
                 .subitem_name{text-decoration: none;}
             }
