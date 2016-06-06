@@ -4,13 +4,41 @@
     .item{padding-top: 15px;}
     .item .top img{width: 100%;}
     .three-items{display: flex;align-content:flex-start;justify-content:center;flex-wrap:wrap;
-        .subitem{width: 20%;overflow: hidden;border: 1px solid #ecf0f1;border-right: none;
+        .subitem{width: 20%;overflow: hidden;border: 1px solid #ecf0f1;border-right: none;transition:box-shadow ease-out .2s;
+
+            &:nth-child(1){
+                &:hover {
+                    .text-svg .st2{fill:#37728b !important;}
+                }
+            }
+            &:nth-child(2){
+                &:hover {
+                    .text-svg .st1{fill:#37728b !important;}
+                }
+            }
+            &:nth-child(3){
+                &:hover {
+                    .text-svg .st1{fill:#37728b !important;}
+                }
+            }
+            &:nth-child(4){
+                &:hover {
+                    .text-svg .st1{fill:#37728b !important;}
+                }
+            }
+            &:nth-child(5){
+                &:hover {
+                    .text-svg .st1{fill:#37728b !important;}
+                }
+            }
+
             &:last-child{border-right: 1px solid #ecf0f1;}
             &:first-child{/*border-left: 1px solid #000;*/}
             &:nth-child(odd){background-color: #fff;}
             &:nth-child(even){background-color: #fff;}
-            &:hover{
+            &:hover{box-shadow: inset 0px -1px 5px 0px rgba(0, 0, 0, 0.15);
                 .subitem_name{text-decoration: none;}
+
             }
             a{text-decoration: none;min-height: 210px;align-content:flex-start;justify-content:space-between;display: flex;flex-direction:column;padding: 15px 20px;color: white;}
             .subitem_other{align-self: flex-end;align-content:flex-end;display: flex;flex-direction:column;text-align: right;color: white;}
@@ -42,8 +70,8 @@
     .slick-prev{left: 10px;transform: translate(0, -50%) rotate(135deg);}
     .slick-next{right: 10px;}
 }
-.goods-item{width: 25%;border-right: 1px solid #ecf0f1;position: relative;
-    &:hover{
+.goods-item{width: 25%;border-right: 1px solid #ecf0f1;position: relative;transition:box-shadow ease-out .2s;
+    &:hover{box-shadow: inset 0px -1px 5px 0px rgba(0, 0, 0, 0.15);
         .goods-item-title{text-decoration: underline;}
     }
     a:hover{text-decoration: none;}
@@ -55,7 +83,7 @@
     &.action{
         &:after{background:#f85e5e url('../images/goods-item-action.png') center center no-repeat;content: '';width: 30px;height: 30px;position: absolute;top:36px;left: 0;pointer-events:none;z-index: 10;}
     }
-    .goods-item-wrap{display: flex;height: 280px;flex-direction:column;overflow: hidden;padding: 5px 18px 20px;background-color: #fff;
+    .goods-item-wrap{display: flex;height: 280px;flex-direction:column;overflow: hidden;padding: 5px 18px 20px;
         .goods-item-img{height: 165px;position: relative;
             img{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
         }
@@ -236,7 +264,7 @@
     .goods-items{background-color: transparent;border:none;}
     .goods-item .goods-item-wrap{height: 305px;}
     .goods-item .goods-item-wrap .goods-item-title{color: #6c6c6c;}
-    .goods-item{width: 33.33%; border: 1px solid #ecf0f1;border-right:none;margin-bottom: 10px;
+    .goods-item{width: 33.33%; border: 1px solid #ecf0f1;border-right:none;margin-bottom: 10px;background-color: white;
         &:nth-child(3n){border-right: 1px solid #ecf0f1;}
     }
     .show-more{width: 100%;padding-top: 15px;
