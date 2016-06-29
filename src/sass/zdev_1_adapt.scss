@@ -222,6 +222,32 @@
 
             /* /header-bottom */
 
+            /* header-another */
+
+                &.header-another{
+
+                    .header-top{
+
+                        .sendwich{position: absolute;top:8px;}
+
+                        .header-search{margin-right: 40px;width: auto;
+                            .search-form{
+                                .form-row{
+                                    input{padding:0 57px 0 15px;width: 200px!important;}
+                                }
+                            }
+                        }
+
+                    }
+
+                    .header-contact-telefone{
+                        &.mobile-show{margin-left: 30px;}
+                    }
+
+                }
+
+            /* /header-another */
+
         }
 
         .header-contact-telefone.mobile-show{display: block !important;}
@@ -256,6 +282,39 @@
                 }
 
             /* /header-center */
+
+            /* header-another */
+
+                &.header-another{
+
+                    .header-top{
+
+                        .mbox{flex-wrap:wrap;}
+
+                        .header-search{padding-top: 10px;margin-right: 0;width: 100%;
+                            .search-form{
+                                .form-row{
+                                    input{width: 100%!important;}
+                                }
+                            }
+                        }
+
+                    }
+
+                    .header-bottom{
+                        .mobile-logo{display: none;}
+                        .header-mobile-catalog-wrap{height: auto;padding:15px 0;
+                            .header-catalog{
+                               &>ul{
+                                   &>li{padding:10px 10px 5px 10px;}
+                               }
+                            }
+                        }
+                    }
+
+                }
+
+            /* /header-another */
 
         }
 

@@ -138,7 +138,7 @@ function headeButer(menuMobile,toggleMenu){
                 var div = toggleMenu;
                 if (!div.is(event.target) && div.has(event.target).length === 0 && !menuMobile.is(event.target) && menuMobile.has(event.target).length === 0)
                     {
-                        toggleMenu.slideUp();
+                        toggleMenu.stop().slideUp();
                         menuMobile.removeClass('active');
                     }
             }

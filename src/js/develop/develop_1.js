@@ -111,13 +111,13 @@
 
         $(document).on('mouseenter', '.header-nav-more.show', function(){
 
-            $('.header-nav-more-list').slideDown(300);
+            $('.header-nav-more-list').stop().slideDown(300);
 
         });
 
         $(document).on('mouseleave', '.header-nav-more.show', function(){
 
-            $('.header-nav-more-list').slideUp(300);
+            $('.header-nav-more-list').stop().slideUp(300);
 
         });
 
@@ -307,7 +307,7 @@
                 wrapCSS:'busket-popup-main',
                 beforeLoad:function(){
 
-                    $('.header-busket-list-main').slideUp(300);
+                    $('.header-busket-list-main').stop().slideUp(300);
 
                 }
             });
@@ -424,10 +424,10 @@
                 if($(window).width() <= 666){
                     if($(this).is('.active')){
                         $(this).removeClass('active');
-                        $(this).parent().find('>ul').slideUp(300);
+                        $(this).parent().find('>ul').stop().slideUp(300);
                     }else{
                         $(this).addClass('active');
-                        $(this).parent().find('>ul').slideDown(300);
+                        $(this).parent().find('>ul').stop().slideDown(300);
                     }
                 }
 
@@ -534,6 +534,47 @@
 
 /* /right-column sizes */
 
+/* header-another */
+
+    function headerAnotherSpecFunc(){
+
+        if($('.header-another').length){
+
+            function headerAnother(){
+
+                if($(window).width() <= 666 && !$('.header-another .header-top-wrap .header-bottom').length){
+
+                    var headerSearch = $('.header-another .header-search').detach();
+                    var headerBottom = $('.header-another .header-bottom').detach();
+
+                    $('.header-another .header-contact-telefone.mobile-show').after(headerSearch);
+                    $('.header-another .header-town').after(headerBottom);
+
+                }else if($(window).width() > 666 && $('.header-another .header-top-wrap .header-bottom').length){
+
+                    var headerSearch = $('.header-another .header-search').detach();
+                    var headerBottom = $('.header-another .header-bottom').detach();
+
+                    $('.header-another').append(headerBottom);
+                    $('.header-bottom .header-mobile-catalog-wrap>ul>li').prepend(headerSearch);
+
+                }
+            }
+
+            headerAnother();
+
+            $(window).resize(function(){
+
+                headerAnother();
+
+            });
+
+        }
+
+    }
+
+/* /header-another */
+
 
 $(document).ready(function(){
 
@@ -543,6 +584,7 @@ $(document).ready(function(){
     busketScripts();
     headerBottom();
     rightColumnSizes();
+    headerAnotherSpecFunc();
 
 });
 
