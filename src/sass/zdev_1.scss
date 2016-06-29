@@ -638,3 +638,43 @@
     /* /header busket popup */
 
 /* /header-busket-form (used in popup too) */
+
+/* trade-in */
+
+    .trade-in{padding-top: 17px;
+
+        .title{font-size: 36px;margin: 0;margin-bottom: 27px;}
+
+        .trade-in-info{background-image: url(../images/trade-in-info-bg.jpg);background-position:center top;background-repeat: no-repeat;background-size: cover;text-align: center;padding:30px 0 18px 0;margin-bottom: 40px;
+            h2{font-size: 40px;font-family: 'Exo2', sans-serif;
+                .red{color:#ee1c25;}
+                .green{color:#90c63d;}
+            }
+            .trade-in-info-text{font-family: 'Exo2', sans-serif;max-width: 700px;width: 100%;margin:0 auto 33px auto;font-size: 18px;color:#898b8c;line-height: 1.4;}
+            .trade-in-info-img{
+                img{vertical-align: middle;margin:0 5px;}
+            }
+        }
+
+    }
+
+    .trade-in-text{margin-bottom: 75px;
+        &.ctext{font-family: 'Open Sans', sans-serif;font-weight: 300;line-height: 1.5;font-size: 14px;color:#38393a;
+
+            p{margin: 0 0 20px 0;
+                &:last-child{margin-bottom: 0;}
+            }
+
+            ul{list-style:none;margin: 0 0 30px 0;padding-left:18px;
+                li{padding-left: 20px;position: relative;margin-bottom: 12px;
+                    &:before{content:'';display: block;position: absolute;left:0;top:9px;width: 5px;height: 5px;border-radius: 50%;background-color: #6eabc5;}
+                }
+            }
+
+            h1, h2, h3, h4, h5, h6{font-weight: 700;margin: 0;}
+            h6{font-size: 14px;margin-bottom: 16px;}
+
+        }
+    }
+
+/* /trade-in */

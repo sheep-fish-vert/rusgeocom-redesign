@@ -507,7 +507,9 @@
                     var columnHeight = $('.header-catalog>ul>li').eq(0).find('>ul').height();
                     var rightBlockWidth = mboxWidth - columnWidth;
 
-                    $('.header-catalog>ul>li').eq(0).addClass('show');
+                    if(!$('.header-catalog>ul>li').eq(0).is('.no-show')){
+                        $('.header-catalog>ul>li').eq(0).addClass('show');
+                    }
 
                     $('.column-script').attr('style','width:' + rightBlockWidth + 'px; min-height:'+ columnHeight+'px;');
 

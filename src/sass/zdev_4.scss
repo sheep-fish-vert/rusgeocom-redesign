@@ -250,6 +250,23 @@
     }
 
     &>span{color: #38393a;font-size: 12px;}
+
+    /* second-style */
+
+        &.second-style{
+
+            ul{background-image:url(../images/planet-img.png);background-repeat: no-repeat;background-position: 0 0;padding-left:20px;}
+
+            li, a{color:#aec0ca;}
+
+            li{
+                &:before, &:after{background-color: #ebebeb;}
+            }
+
+        }
+
+    /* /second-style */
+
 }
 
 // catalog-top-img
