@@ -230,8 +230,8 @@
 
                         .sendwich{position: absolute;top:13px;}
 
-                        .header-search{margin-right: 40px;width: auto;overflow: hidden;border-radius: 4px;
-                            .search-form{
+                        .header-search{margin-right: 40px;width: auto;
+                            .search-form{overflow: hidden;border-radius: 4px;
                                 .form-row{
                                     input{padding:0 57px 0 15px;width: 200px!important;}
                                 }
@@ -243,8 +243,13 @@
                         }
 
                         .header-bottom{
+                            .mbox{padding:0!important;}
                             .mobile-logo{display: none;}
-                            .header-mobile-catalog-wrap{height: auto;padding:10px 5px;align-items: flex-start;}
+                            .header-mobile-catalog-wrap{height: auto;align-items: flex-start;width: 100%;width: 100%;padding:0;
+                                .mobile-catalog-button{width: 100%;
+                                    a{display: block;padding:10px 20px;}
+                                }
+                            }
                         }
 
                     }
