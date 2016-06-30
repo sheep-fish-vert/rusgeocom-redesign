@@ -504,7 +504,10 @@
                 }else{
                     var mboxWidth = $('.mbox').width();
                     var columnWidth = $('.header-catalog>ul>li').eq(0).outerWidth();
-                    var columnHeight = $('.header-catalog>ul>li').eq(0).find('>ul').height();
+                    var columnHeight = 0;
+                    if(!$('.column-script').is('.no-height')){
+                        columnHeight = $('.header-catalog>ul>li').eq(0).find('>ul').height();
+                    }
                     var rightBlockWidth = mboxWidth - columnWidth;
 
                     if(!$('.header-catalog>ul>li').eq(0).is('.no-show')){
