@@ -228,14 +228,18 @@
 
                     .header-top{
 
-                        .sendwich{position: absolute;top:8px;}
+                        .sendwich{position: absolute;top:13px;}
 
-                        .header-search{margin-right: 40px;width: auto;
+                        .header-search{margin-right: 40px;width: auto;overflow: hidden;border-radius: 4px;
                             .search-form{
                                 .form-row{
                                     input{padding:0 57px 0 15px;width: 200px!important;}
                                 }
                             }
+                        }
+
+                        .header-top-wrap{
+                            .header-top-nav{padding-left:20px;}
                         }
 
                         .header-bottom{
