@@ -248,7 +248,9 @@
                             .header-mobile-catalog-wrap{height: auto;align-items: flex-start;width: 100%;width: 100%;padding:0;
                                 .mobile-catalog-button{width: 100%;
                                     a{display: block;padding:10px 20px;}
+                                    .mobile-arrow{top:15px;}
                                 }
+                                &>ul{position: relative;}
                             }
                         }
 
@@ -302,6 +304,8 @@
                 &.header-another{
 
                     .header-top{
+
+                        .sendwich{top:8px;}
 
                         .mbox{flex-wrap:wrap;}
 
