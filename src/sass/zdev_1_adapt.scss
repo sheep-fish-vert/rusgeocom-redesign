@@ -238,6 +238,11 @@
                             }
                         }
 
+                        .header-bottom{
+                            .mobile-logo{display: none;}
+                            .header-mobile-catalog-wrap{height: auto;padding:10px 5px;align-items: flex-start;}
+                        }
+
                     }
 
                     .header-contact-telefone{
