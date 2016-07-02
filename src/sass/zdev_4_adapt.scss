@@ -322,7 +322,7 @@
     #rewievPopup label{width: 90px;}
     #rewievPopup input, #rewievPopup textarea,#rewievPopup .rating{max-width: 100% !important;width: calc(100% - 120px) !important;}
 
-        // top-block
+    // top-block
     .top-block{
         .three-items{
             .subitem{width: 100%;justify-content: flex-start;
@@ -330,6 +330,14 @@
             }
         }
     }
+
+    /* breadcrumbs */
+
+        .breadcrumbs{
+            .second-style{padding-left: 0px;}
+        }
+
+    /* /breadcrumbs */
 
 }
 @media screen and (max-width: 479px){

@@ -52,6 +52,20 @@
 }
 @media screen and (max-width: 767px){
 
+    /* trade-in */
+
+        .trade-in{
+
+            .trade-in-info{
+                .trade-in-info-img{
+                    img{max-height: 150px;}
+                }
+            }
+
+        }
+
+    /* /trade-in */
+
 }
 @media screen and (max-width: 666px){
 
@@ -274,7 +288,12 @@
 
         .trade-in{
             .title{padding-left: 0;}
+            .trade-in-info{
+                .column-script{padding-left: 0;}
+            }
         }
+
+        .trade-in-ctext{padding-left: 0;}
 
     /* /trade-in */
 
@@ -392,19 +411,7 @@
 
     /* /header-busket-form (used in popup too) */
 
-    /* trade-in */
 
-        .trade-in{
-
-            .trade-in-info{
-                .trade-in-info-img{
-                    img{max-height: 150px;}
-                }
-            }
-
-        }
-
-    /* /trade-in */
 
 }
 @media screen and (max-width: 320px){
