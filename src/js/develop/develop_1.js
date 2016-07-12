@@ -618,6 +618,40 @@
 
 /* /brend scripts */
 
+/* contacts scripts */
+
+    function contactsSelect(){
+
+        $(document).on('click', '.contacts-info-select-list-text', function(){
+
+            $(this).toggleClass('active');
+
+            $('.contacts-info-select-list-wrap').stop().slideToggle(300);
+
+        });
+
+        $(document).on('click','.contacts-info-select-list-wrap li', function(){
+
+            var town = $(this).attr('data-town');
+
+            var townText = $(this).text();
+
+            $('.contacts-info-select-list-text').removeClass('active').text(townText);
+
+            $('.contacts-info-select-list-wrap').slideUp(300);
+
+            $('.contacts-info-adress-tab-item').removeClass('active');
+
+            $('.contacts-info-adress-tab-item[data-town='+town+']').addClass('active');
+
+        });
+
+        $('.contacts-info-select-list-wrap li').eq(0).click();
+
+    }
+
+/* /contacts script */
+
 $(document).ready(function(){
 
     townStyler();
@@ -629,6 +663,8 @@ $(document).ready(function(){
     headerAnotherSpecFunc();
 
     brendCatalog();
+
+    contactsSelect();
 
 });
 
