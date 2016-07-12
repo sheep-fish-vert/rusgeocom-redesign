@@ -129,6 +129,35 @@
             }
         }
     }
+
+    // news page
+    .news-page-wrap{
+        .news-page-row{
+            &.reverse{
+                .item{
+                    &.standart{
+                        .item-mini{margin-right: 0;}
+                    }
+                }
+            }
+        }
+        .item{
+            &.big{width: 100%;}
+            &.two{width: 100%;
+                &:first-child{margin-right: 0;}
+                &:nth-child(2){margin-left: 0;}
+            }
+            &.standart{width: 100%;
+                .item-mini{margin-left: 0;
+                    &:last-child{}
+                    .item-title a{}
+                }
+            }
+        }
+    }
+
+    // pagination
+    .pagination ul{justify-content: center;}
 }
 @media screen and (max-width: 767px){
 
@@ -136,38 +165,10 @@
     // goods popap
     .serial-popup-main{width: 100%;padding: 20px 10px 10px;
         p{margin:0;}
-
-        .serial-form-row:last-child .serial-form-acordion-wrap{}
-        .serial-form-acordion-wrap{}
-        .serial-form-acordion-wrap.has-bottom .serial-form-acrodion-top{
-            &:after{}
-            &.active:after{}
-        }
-
-        .serial-popup-rows-wrap{}
         .serial-label{padding-left: 10px;}
-        .serial-popup-title{}
-        .input-check-wrap{
-            input{}
-            input+.radio-main{}
-            input:checked+.radio-main:after{}
-            input+.checkbox-main{}
-            input:checked+.checkbox-main:after{}
-        }
         .input-description{margin-left: 0;width: 60%;margin-right: 0;padding-right: 1%;
-            .input-description-top{}
-            .input-description-bottom{}
         }
         .input-price{width: 20%;}
-
-        .serial-form-row.bottom{
-            .serial-form-sum{
-                .serial-sum-val{}
-            }
-            .serial-form-submit{
-                .button.serial-submit{}
-            }
-        }
     }
 
 
@@ -180,9 +181,7 @@
 
     // title
     .title{
-        h5{}
         a{background-color: transparent;}
-
         &.big{text-align: center;justify-content: center;padding: 15px 0px 10px;border-bottom: 1px solid #dadada;margin-bottom: 20px;
             h2{font-size: 22px;margin-bottom: 0;}
             a{display: block;}
