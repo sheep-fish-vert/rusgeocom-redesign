@@ -582,8 +582,32 @@
 
     function brendCatalog(){
 
+        if($(window).width() < 992){
+                $('.brend-page .header-catalog ul li:first-child').removeClass('show');
+            }else{
+                $('.brend-page .header-catalog ul li:first-child').addClass('show');
+            }
+
+        $(window).resize(function(){
+            if($(window).width() < 992){
+                $('.brend-page .header-catalog ul li:first-child').removeClass('show');
+            }else{
+                $('.brend-page .header-catalog ul li:first-child').addClass('show');
+            }
+        });
+
+        $(document).on('click', '.brend .brend-catalog-button', function(){
+
+            var parent = $(this).parents('.brend-catalog');
+
+            parent.toggleClass('active');
+            parent.find('.brend-catalog-list').stop().slideToggle(300);
+
+        });
+
         $(document).on('click', '.brend .second-arrow', function(){
 
+            $('.brend-catalog-list').css({'height':'auto'});
             var parent = $(this).parents('.second-level');
             parent.toggleClass('active');
             parent.find('ul').stop().slideToggle(300);
