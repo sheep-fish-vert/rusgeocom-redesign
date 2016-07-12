@@ -792,3 +792,106 @@
     }
 
 /* /brend */
+
+/* contacts */
+
+    .contacts-page{
+
+        .contacts-info{background-color: #fff;padding:20px 20px 20px 20px;position:relative;top:20px;margin-bottom:40px;
+
+            .title{margin-bottom:30px;
+                h2{margin:0;font-size: 36px;color:#38393a;font-weight:400;line-height: 1;}
+            }
+
+            .contacts-info-main{margin-bottom: 34px;
+                .contacts-info-wrap{margin-bottom: 34px;
+                    a{text-decoration: none;font-size:16px;color:#38393a;
+                        &:hover{
+                            .contacts-info-text{
+                                &:after{transform:scale(1);}
+                            }
+                        }
+                    }
+                    .contacts-info-icon{width:24px;display:inline-block;vertical-align:middle;margin-right:5px;
+                        img{display:block;margin:0 auto;}
+                    }
+                    .contacts-info-text{display: inline-block;vertical-align:middle;position:relative;
+                        &:after{content:'';display:block;position:absolute;left:0;top:100%;width:100%;height:1px;background-color:#38393a;transform:scale(0);transition:all 300ms ease;}
+                    }
+                }
+            }
+
+            .contacts-info-content{font-family:'Open Sans', sans-serif;color:#38393a;font-size: 14px;font-weight:300;line-height: 1.5;margin-bottom:20px;
+                p{margin:0;}
+            }
+
+            .contacts-info-adress{margin-bottom: 20px;
+                .contacts-info-adress-line{display: flex;justify-content: flex-start;align-items: center;margin-bottom:20px;
+                    .contacts-info-adress-text{font-family:'Open Sans', sans-serif;color:#38393a;font-size:16px;font-weight:700;margin-right:10px;}
+                }
+                .contacts-info-select-list{position:relative;
+                    .contacts-info-select-list-text{position:relative;border-bottom:1px dashed #6eabc5;color:#6eabc5;padding:0 15px 0 5px;cursor:pointer;
+                        &:after{content:'';display: block;position:absolute;right:0;top:calc(50% - 3px);width:10px;height:5px;background-image:url(../images/contacts-town-arrow.png);background-repeat:no-repeat;transform-origin:50% 50%;transition:all 300ms ease;}
+                        &.active{
+                            &:after{transform:rotate(180deg) translateZ(0px);}
+                        }
+                    }
+                    .contacts-info-select-list-wrap{position:absolute;right:0;top:100%;display: none;
+                        ul{list-style:none;background-color:#fff;padding:10px 10px 10px 10px;border:1px solid #ccc;margin:0;
+                            li{font-size:14px;margin-bottom:10px;cursor:pointer;
+                                &:last-child{margin-bottom: 0;}
+                                &:hover{text-decoration:underline;}
+                            }
+                        }
+                    }
+                }
+            }
+
+            .contacts-info-adress-tabs{
+                .contacts-info-adress-tab-item{display: none;
+                    &.active{display: block;}
+                    .contacts-info-adress-tab-item-wrap{display:flex;justify-content: flex-start;align-items:center;margin-bottom: 10px;
+                        .contacts-info-tab-icon{margin-right:10px;}
+                        .contacts-info-tab-text{font-size:14px;color:#38393a;font-family:'Open Sans', sans-serif;font-weigth:300;}
+                    }
+                }
+            }
+
+            .contacts-info-form{
+
+                .title{margin-bottom:10px;
+                    h4{margin:0;font-size:24px;color:#38393a;font-weight:400;}
+                }
+
+                .contacts-form{max-width:450px;
+                    input, textarea{width: 100%;border:1px solid #e6e9eb;transition:all 300ms ease;font-family:'Open Sans', sans-serif;
+                        &::-webkit-input-placeholder {color:#a4a4a4;font-family:'Open Sans', sans-serif;font-weight:400;font-size: 18px;transition:all 300ms ease;}
+                        &:-moz-placeholder {color:#a4a4a4;opacity:1;font-family:'Open Sans', sans-serif;font-weight:400;font-size: 18px;transition:all 300ms ease;}
+                        &::-moz-placeholder {color:#a4a4a4;opacity:1;font-family:'Open Sans', sans-serif;font-weight:400;font-size: 18px;transition:all 300ms ease;}
+                        &:-ms-input-placeholder {color:#a4a4a4;font-family:'Open Sans', sans-serif;font-weight:400;font-size: 18px;transition:all 300ms ease;}
+                        &.error{background-color:#ff0000;
+                            &::-webkit-input-placeholder {color:#fff;}
+                            &:-moz-placeholder {color:#fff;opacity:1;}
+                            &::-moz-placeholder {color:#fff;opacity:1;}
+                            &:-ms-input-placeholder {color:#fff;}
+                            &+.errorText{display:none!important;}
+                        }
+                    }
+                    input{border-width:1px 1px 0 1px;border-style:solid;border-color:#e6e9eb;height:50px;line-height:50px;padding:0 25px;}
+                    textarea{padding:20px 25px;height:140px;resize:none;}
+
+                    .form_row_submit{padding-top:20px;
+                        .button{display:flex;justify-content: center;align-items:center;width:145px;height:45px;background-color: #427e98;color:#fff;font-size:18px;border:none;transition:all 300ms ease;
+                            &:hover{background-color:#4299bf;}
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+/* /contacts */

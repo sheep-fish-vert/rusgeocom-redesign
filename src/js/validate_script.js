@@ -203,6 +203,7 @@ $(document).ready(function(){
    validate('.login-form-enter-mobile');
    validate('.search-form');
    validate('.comment form');
+   validate('.contacts-form');
 
    Maskedinput();
    fancyboxForm();
