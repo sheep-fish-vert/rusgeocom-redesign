@@ -707,7 +707,7 @@
             }
         }
 
-        .brend-catalog{
+        .brend-catalog{margin-bottom:28px;
 
             .brend-catalog-line{position:relative;text-align:center;
                 &:before{content:'';display:block;position:absolute;width:100%;height:1px;background-color:#e6e9eb;left:0;top:calc(50% - 2px);}
@@ -721,7 +721,7 @@
                     h3{margin:0 0 20px 0;font-size:30px;color:#38393a;font-weight:400;}
                 }
 
-                .brend-catalog-list-wrap{background-color:#fff;border:1px solid #e8e8e8;padding:20px 0px 20px 0px;display: flex;justify-content: space-between;align-items: flex-start;
+                .brend-catalog-list-wrap{background-color:#fff;border:1px solid #e8e8e8;padding:20px 0px 5px 0px;display: flex;justify-content: space-between;align-items: flex-start;
                     p{margin:0;}
                     ul{list-style:none;margin:0;padding:0;}
                     .brend-catalog-list-item{width:33.33%;padding:0 20px;
@@ -746,6 +746,36 @@
                     }
                 }
 
+            }
+
+        }
+
+        .brend-bottom{
+
+            .goods-items{background-color:transparent;border:none;margin-bottom:33px;
+                .good-item{width:33.33%;border:1px solid #ecf0f1;
+                    a, .goods-item-wrap{display: block;}
+                    a{background-color:#fff;text-decoration: none;}
+                    .goods-item-wrap{display: flex;flex-direction:column;align-items: flex-start;justify-content: center;padding:25px 20px 20px 20px;height:310px;
+                        .goods-item-img{margin-bottom:35px;width:100%;text-align:center;}
+                        .goods-item-text{display: flex;flex-direction:column;justify-content: flex-start;align-items: flex-start;
+                            .goods-item-title{font-size:14px;color:#34495e;font-family:'Open Sans', sans-serif;text-decoration:underline;margin-bottom:15px;}
+                            .goods-item-subtitle{font-family:'Open Sans', sans-serif;color:#7f8c8d;font-size:11px;margin-bottom:15px;}
+                            .goods-item-price{font-family:'Open Sans', sans-serif;
+                                .goods-item-price-now{font-size:18px;color:#393c3d;font-weight:700;}
+                                .goods-item-price-old{font-size:12px;color:#bdc3c7;font-weight:600;text-decoration:line-through;margin-left:5px;}
+                            }
+                        }
+                    }
+                }
+            }
+
+            .load-more-items{display:flex;flex-direction:column;justify-content: center;align-items:center;margin-bottom:30px;
+                .load-more-icon{border-radius:50%;border:1px solid #a8a8a8;padding:12px 10px 10px 10px;margin-bottom:15px;cursor:pointer;transition:all 300ms ease;
+                    &:hover{background-color:#fff;}
+                }
+                .load-more-text{font-family:'Open Sans', sans-serif;font-size:18px;color:#393c3d;margin-bottom:10px;}
+                .load-more-descript{font-family:'Open Sans', sans-serif;font-size:12px;color:#a5a5a5;}
             }
 
         }

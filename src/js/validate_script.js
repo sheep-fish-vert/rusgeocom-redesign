@@ -160,7 +160,40 @@ function fancyboxForm(){
   });
 }
 
+/* brend load more */
 
+    function brendLoadMore(){
+
+        $(document).on('click', '.brend .load-more-icon:not(.loading)', function(){
+
+            $(this).addClass('loading');
+
+            $.ajax({
+                url:'js/json/brend-load-more.json',
+                method:'POST',
+                data:{'action':'brend_load_more'},
+                success:function(data){
+
+                    var brendLoadMoreData = data;
+                    if(typeof data == 'object'){
+                        brendLoadMoreData = $.parseJSON(data);;
+                    }
+
+                    $('.brend .goods-items').append(brendLoadMoreData.items);
+                    $('.brend .load-more-descript').text(brendLoadMoreData.loaded_text);
+
+                    if(brendLoadMoreData.last == 'true'){
+                        $('.brend .load-more-icon, .brend .load-more-text').remove();
+                    }
+
+                }
+            });
+
+        });
+
+    }
+
+/* brend load more */
 
 $(document).ready(function(){
 
@@ -173,5 +206,7 @@ $(document).ready(function(){
 
    Maskedinput();
    fancyboxForm();
+
+   brendLoadMore();
 
 });
