@@ -578,6 +578,21 @@
 
 /* /header-another */
 
+/* brend scripts */
+
+    function brendCatalog(){
+
+        $(document).on('click', '.brend .second-arrow', function(){
+
+            var parent = $(this).parents('.second-level');
+            parent.toggleClass('active');
+            parent.find('ul').stop().slideToggle(300);
+
+        });
+
+    }
+
+/* /brend scripts */
 
 $(document).ready(function(){
 
@@ -588,6 +603,8 @@ $(document).ready(function(){
     headerBottom();
     rightColumnSizes();
     headerAnotherSpecFunc();
+
+    brendCatalog();
 
 });
 
