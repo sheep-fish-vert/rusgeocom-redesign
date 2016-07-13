@@ -900,7 +900,49 @@
 
     .busket-page{
 
+        .title{margin-bottom:20px;
+            h2{font-size: 36px;color:#38393a;font-weight:400;}
+        }
 
+        .busket-top{display:flex;justify-content: center;align-items: flex-start;padding-bottom: 30px;
+
+            .busket-circle-wrap{width:calc((100% - 140px) / 3);position:relative;display: flex;justify-content: flex-start;align-items: flex-start;top:5px;
+                &:last-child{width:auto;
+                    &:after{display: none;}
+                }
+                &:after{content:'';height:1px;width:calc(100% - 34px);position:absolute;top:50%;left:34px;background-color: #ebebeb;transition:all 300ms ease;}
+
+                .busket-circle-item{position:relative;
+                    .busket-circle{display: flex;justify-content: center;align-items: center;width: 34px;height: 34px;border-radius:50%;border:5px solid #ebebeb;font-size:14px;color:#d9d9d9;font-style: italic;transition:all 300ms ease;}
+                    .busket-circle-text{position:absolute;font-size: 16px;color:#c0c0c0;font-style: italic;top:calc(100% + 10px);left:50%;transform:translate(-50%, 0);width:150px;text-align: center;}
+                }
+
+                &.current, &.active{top:0;
+
+                    &:after{width:calc(100% - 43px);left:43px;}
+
+                    .busket-circle-item{
+                        .busket-circle{width:43px;height:43px;color:#3d7992;border-color:#3d7992;}
+                        .busket-circle-text{color:#427e98;}
+                    }
+
+                }
+
+                &.current{
+
+                    &:after{background: #427e98;background: -moz-linear-gradient(left, #427e98 0%, #eaeaeb 100%);background: -webkit-linear-gradient(left, #427e98 0%,#eaeaeb 100%);background: linear-gradient(to right, #427e98 0%,#eaeaeb 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#427e98', endColorstr='#eaeaeb',GradientType=1 );}
+
+                }
+
+                &.active{
+
+                    &:after{background:none;background-color:#3d7992;}
+
+                }
+
+            }
+
+        }
 
     }
 
