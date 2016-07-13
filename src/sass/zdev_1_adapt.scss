@@ -34,6 +34,20 @@
 }
 @media screen and (max-width: 1024px){
 
+    /* contacts-page */
+
+        .contacts-page{
+
+            .contacts-info{
+                .contacts-right{
+                    .contacts-right-telefone{font-size: 28px;}
+                }
+            }
+
+        }
+
+    /* /contacts-page */
+
 }
 @media screen and (max-width: 992px){
 
@@ -44,6 +58,22 @@
         }
 
     /* /brend */
+
+    /* contacts-page */
+
+        .contacts-page{
+            .contacts-info{display:block;
+                .contacts-left, .contacts-right{width:100%;text-align: center;}
+                .contacts-left{margin-bottom: 10px;padding-left:0;
+                    .contacts-left-wrap{max-width:none;text-align:center;}
+                }
+                .contacts-right{
+                    .button-red{margin:0 auto;}
+                }
+            }
+        }
+
+    /* /contacts-page */
 
 }
 @media screen and (max-width: 850px){
