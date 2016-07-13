@@ -39,15 +39,17 @@
 
                 <div class="busket-items-wrap">
 
-                    <div class="busket-item">
+                    <div class="busket-item current">
 
                         <div class="header-busket-list-wrap">
                             <ul>
                                 <li data-item-id=1>
-                                    <span class="item-img">
-                                        <img src="images/basket-list-img1.png" alt="" />
-                                    </span>
-                                    <a href="#" class="busket-list-link">Тахеометр SOKKIA CX-105</a>
+                                    <div class="busket-item-info">
+                                        <span class="item-img">
+                                            <img src="images/basket-list-img1.png" alt="" />
+                                        </span>
+                                        <a href="#" class="busket-list-link">Тахеометр SOKKIA CX-105</a>
+                                    </div>
                                     <div class="busket-list-count">
                                         <div class="busket-list-count-change minus"></div>
                                         <div class="busket-list-count-main" data-price=200>
@@ -58,14 +60,18 @@
                                         </div>
                                         <div class="busket-list-count-change plus"></div>
                                     </div>
-                                    <div class="busket-list-price"><span></span> р</div>
-                                    <div class="remove-item"></div>
+                                    <div class="busket-item-end">
+                                        <div class="busket-list-price"><span></span> р</div>
+                                        <div class="remove-item"></div>
+                                    </div>
                                 </li>
                                 <li data-item-id=2>
-                                    <span class="item-img">
-                                        <img src="images/basket-list-img2.png" alt="" />
-                                    </span>
-                                    <a href="#" class="busket-list-link">Оптический нивелир RGK N-32</a>
+                                    <div class="busket-item-info">
+                                        <span class="item-img">
+                                            <img src="images/basket-list-img2.png" alt="" />
+                                        </span>
+                                        <a href="#" class="busket-list-link">Оптический нивелир RGK N-32</a>
+                                    </div>
                                     <div class="busket-list-count">
                                         <div class="busket-list-count-change minus"></div>
                                         <div class="busket-list-count-main" data-price=100>
@@ -76,14 +82,18 @@
                                         </div>
                                         <div class="busket-list-count-change plus"></div>
                                     </div>
-                                    <div class="busket-list-price"><span></span> р</div>
-                                    <div class="remove-item"></div>
+                                    <div class="busket-item-end">
+                                        <div class="busket-list-price"><span></span> р</div>
+                                        <div class="remove-item"></div>
+                                    </div>
                                 </li>
                                 <li data-item-id=3>
-                                    <span class="item-img">
-                                        <img src="images/basket-list-img3.png" alt="" />
-                                    </span>
-                                    <a href="#" class="busket-list-link">Трассоискатель RD 4000</a>
+                                    <div class="busket-item-info">
+                                        <span class="item-img">
+                                            <img src="images/basket-list-img3.png" alt="" />
+                                        </span>
+                                        <a href="#" class="busket-list-link">Трассоискатель RD 4000</a>
+                                    </div>
                                     <div class="busket-list-count">
                                         <div class="busket-list-count-change minus"></div>
                                         <div class="busket-list-count-main" data-price=300>
@@ -94,8 +104,10 @@
                                         </div>
                                         <div class="busket-list-count-change plus"></div>
                                     </div>
-                                    <div class="busket-list-price"><span></span> р</div>
-                                    <div class="remove-item"></div>
+                                    <div class="busket-item-end">
+                                        <div class="busket-list-price"><span></span> р</div>
+                                        <div class="remove-item"></div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -114,44 +126,56 @@
 
                     <div class="busket-item">
 
-                        <div class="radio-row">
-                            <label>
-                                <span class="radio-wrap">
-                                    <input type="radio" name="delivery_type" />
-                                    <span class="radio-button"></span>
-                                </span>
-                                <span class="radio-text">Самовывоз <span>(бесплатно)</span></span>
-                            </label>
-                        </div>
+                        <div class="radio-rows-main">
 
-                        <div class="radio-row">
-                            <label>
-                                <span class="radio-wrap">
-                                    <input type="radio" name="delivery_type" />
-                                    <span class="radio-button"></span>
-                                </span>
-                                <span class="radio-text">Доставка по России <span>(договорная)</span></span>
-                            </label>
-                        </div>
+                            <div class="title">
+                                <h4>Выберете способ доставки</h4>
+                            </div>
 
-                        <div class="radio-row">
-                            <label>
-                                <span class="radio-wrap">
-                                    <input type="radio" name="delivery_type" />
-                                    <span class="radio-button"></span>
-                                </span>
-                                <span class="radio-text">Доставка по Москве и СПБ <span>(договорная)</span></span>
-                            </label>
-                        </div>
+                            <div class="radio-rows-wrap">
 
-                        <div class="radio-row">
-                            <label>
-                                <span class="radio-wrap">
-                                    <input type="radio" name="delivery_type" />
-                                    <span class="radio-button"></span>
-                                </span>
-                                <span class="radio-text">Доставка по Московской и Ленинградской области <span>(договорная)</span></span>
-                            </label>
+                                <div class="radio-row">
+                                    <label>
+                                        <span class="radio-wrap">
+                                            <input type="radio" name="delivery_type" checked />
+                                            <span class="radio-button"></span>
+                                        </span>
+                                        <span class="radio-text">Самовывоз <span>(бесплатно)</span></span>
+                                    </label>
+                                </div>
+
+                                <div class="radio-row">
+                                    <label>
+                                        <span class="radio-wrap">
+                                            <input type="radio" name="delivery_type" />
+                                            <span class="radio-button"></span>
+                                        </span>
+                                        <span class="radio-text">Доставка по России <span>(договорная)</span></span>
+                                    </label>
+                                </div>
+
+                                <div class="radio-row">
+                                    <label>
+                                        <span class="radio-wrap">
+                                            <input type="radio" name="delivery_type" />
+                                            <span class="radio-button"></span>
+                                        </span>
+                                        <span class="radio-text">Доставка по Москве и СПБ <span>(договорная)</span></span>
+                                    </label>
+                                </div>
+
+                                <div class="radio-row">
+                                    <label>
+                                        <span class="radio-wrap">
+                                            <input type="radio" name="delivery_type" />
+                                            <span class="radio-button"></span>
+                                        </span>
+                                        <span class="radio-text">Доставка по Московской и Ленинградской области <span>(договорная)</span></span>
+                                    </label>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </div>
@@ -160,27 +184,19 @@
 
                 <div class="busket-items-button">
 
-                    <div class="busket-button-next">
+                    <a href="#" class="button-transparent busket-button-next active">
+                        <span class="button-text">Далее</span>
+                        <span class="button-icon">
+                            <img src="images/next-icon.png" alt="" />
+                        </span>
+                    </a>
 
-                        <a href="#" class="button-transparent">
-                            <span class="button-text">Далее</span>
-                            <span class="button-icon">
-                                <img src="images/next-icon.png" alt="" />
-                            </span>
-                        </a>
-
-                    </div>
-
-                    <div class="busket-button-send">
-
-                        <button class="button-transparent" type="submit">
-                            <span class="button-text">Купить</span>
-                            <span class="button-icon">
-                                <img src="images/next-icon.png" alt="" />
-                            </span>
-                        </button>
-
-                    </div>
+                    <button class="button-transparent busket-button-send" type="submit">
+                        <span class="button-text">Купить</span>
+                        <span class="button-icon">
+                            <img src="images/next-icon.png" alt="" />
+                        </span>
+                    </button>
 
                 </div>
 

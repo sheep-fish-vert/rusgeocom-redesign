@@ -904,7 +904,7 @@
             h2{font-size: 36px;color:#38393a;font-weight:400;}
         }
 
-        .busket-top{display:flex;justify-content: center;align-items: flex-start;padding-bottom: 30px;
+        .busket-top{display:flex;justify-content: center;align-items: flex-start;padding-bottom: 30px;margin-bottom:45px;
 
             .busket-circle-wrap{width:calc((100% - 140px) / 3);position:relative;display: flex;justify-content: flex-start;align-items: flex-start;top:5px;
                 &:last-child{width:auto;
@@ -944,6 +944,97 @@
 
         }
 
+        .busket-items-wrap{position:relative;
+            &:before{content:'';display: block;position:absolute;z-index: 1;top:0;left:0;width: 100%;height: 100%;}
+            .busket-item{position:absolute;top:0;left:0;z-index:0;opacity:0;transition:all 300ms ease;
+                &.current{z-index: 2;opacity:1;position:relative;}
+            }
+
+            .header-busket-list-wrap{
+                ul{list-style:none;padding:0;margin:0;}
+                li{display: flex;justify-content: space-between;align-items: center;border-top:1px solid #e4eaea;padding:15px 0 15px 0;
+                    &:last-child{border-bottom:1px solid #e4eaea;}
+                    .busket-item-info{display: flex;justify-content: flex-start;align-items: center;}
+                    .busket-item-end{display: flex;justify-content: flex-end;align-items: center;}
+                    .item-img{width:60px;text-align: center;}
+                    .busket-list-link{width:250px;display: block;}
+                    .busket-list-count{display: flex;justify-content: center;align-items: center;
+                        .busket-list-count-main{
+                            .busket-list-text{display: none;}
+                            input{width: 40px;height:30px;border:1px solid #ecf0f1;line-height:30px;text-align: center;color:#3f3f3f;font-size: 14px;font-family:'Open Sans', sans-serif;background-color:#fff;}
+                        }
+                        .busket-list-count-change{width: 24px;height:30px;position:relative;cursor:pointer;transition:all 300ms ease;
+                            &:before, &:after{content:'';display: block;position:absolute;background-color:#ecf0f1;transition:all 300ms ease;}
+                            &:before{height:2px;width:12px;left:calc(50% - 6px);top:calc(50% - 1px);}
+                            &:after{height:12px;width:2px;left:calc(50% - 1px);top:calc(50% - 6px);}
+                            &.disabled{background-color:#ecf0f1;cursor:default;
+                                &:after, &:before{background-color: #fff;}
+                            }
+                            &:hover:not(.disabled){
+                                &:before, &:after{background-color: #437f99;}
+                            }
+                            &.minus{
+                                &:after{display: none;}
+                            }
+                        }
+                    }
+                    .busket-list-price{width:150px;text-align: center;font-size:16px;color:#393c3d;font-family:'Open Sans', sans-serif;margin-right:5px;}
+                    .remove-item{width: 20px;height:20px;border-radius:50%;border:1px solid #ececec;position:relative;transform:rotate(45deg);cursor:pointer;transition:all 300ms ease;
+                        &:before, &:after{content:'';display: block;background-color: #ececec;position:absolute;transition:all 300ms ease;}
+                        &:before{width:15px;height:1px;left:calc(50% - 7px);top:50%;}
+                        &:after{height:15px;width:1px;left:50%;top:calc(50% - 7px);}
+                    }
+                }
+            }
+
+            .header-busket-popup{display: flex;justify-content: flex-end;align-items: center;padding-top:25px;padding-right:20px;}
+            .header-busket-popup-line-top{font-family:'Open Sans', sans-serif;color:#393c3d;width: 150px;text-align:center;
+                .all-sum-text{font-size:14px;margin-right:5px;display: inline-block;vertical-align: middle;}
+                .all-sum-value{font-weight:700;font-size: 18px;max-width:250px;display: inline-block;vertical-align: middle;}
+            }
+
+        }
+
+        .radio-rows-main{
+
+            .title{margin-bottom:20px;
+                h4{margin:0;font-size:22px;color:#38393a;font-family:'Open Sans', sans-serif;font-weight:600;}
+            }
+
+            .radio-row{margin-bottom:10px;
+                &:last-child{margin-bottom: 0;}
+                .radio-wrap{position:relative;display: inline-block;vertical-align:middle;position:relative;margin-right: 3px;
+                    input{position:absolute;width:0;height:0;
+                        &:checked+.radio-button{
+                            &:before{content:'';display: block;position:absolute;width:10px;height:10px;border-radius:50%;background-color:#81868b;top:calc(50% - 5px);left:calc(50% - 5px);}
+                        }
+                    }
+                    .radio-button{width: 20px;height:20px;display: inline-block;border-radius:50%;border:1px solid #e1e1e4;box-shadow:inset 4px 4px 10px -5px rgba(0, 0, 0, .04);position:relative;cursor:pointer;}
+                }
+                .radio-text{display: inline-block;vertical-align:middle;font-size: 16px;color:#4d4e4f;
+                    span{font-size: 14px;color:#d2d2d3;}
+                }
+            }
+        }
+
+        .busket-items-button{display: flex;justify-content: flex-end;align-items: center;padding:30px 0 30px 0;
+
+            .busket-button-next, .busket-button-send{display: none;
+                .button-text{margin-right:5px;}
+                &.active{display: flex;}
+            }
+
+        }
+
     }
 
 /* busket */
+
+/* button-transparent */
+
+    .button-transparent{width:140px;display:block;height:48px;border:3px solid #427e98;background-color:transparent;display:flex;justify-content: center;align-items: center;font-size:18px;color:#427e98;font-family:'Open Sans', sans-serif;transition:all 300ms ease;
+        .button-text{margin-right:5px;}
+        &:hover{text-decoration: none;background-color:#d5d5d5;}
+    }
+
+/* /button-transparent */

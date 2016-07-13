@@ -148,10 +148,9 @@
 
     function busketScripts(){
 
-        var itemsLength = $('.header-busket-list-wrap li').length;
+        var itemsLength = $('.header-busket-list-main .header-busket-list-wrap li').length;
 
         $('.busket-subtitle span, .header-busket-value span').text(itemsLength);
-
 
         /* busket change items value */
 
@@ -173,7 +172,8 @@
                 });
 
                 if(typeof callback == 'function'){
-                    callback();
+                    var parent = item.parents('.header-busket-list-wrap').parent();
+                    callback(parent);
                 }
 
             }
@@ -182,17 +182,17 @@
 
         /* busket all items sum */
 
-            function busketAllItemsSum(){
+            function busketAllItemsSum(parent){
 
                 var allSum = 0;
 
-                $('.header-busket-list-wrap li').each(function(){
+                parent.find('.header-busket-list-wrap li').each(function(){
 
                     allSum = allSum + parseInt($(this).find('.busket-list-price span').attr('data-item-sum'));
 
                 });
 
-                $('.all-sum-value span').text(numberWithSpaces(allSum));
+                parent.find('.all-sum-value span').text(numberWithSpaces(allSum));
 
             }
 
@@ -200,7 +200,28 @@
 
         /* calcing sum by page loading */
 
-            $('.header-busket-list-wrap li').each(function(index){
+            $('.header-busket-list-wrap').each(function(){
+
+                $(this).find('li').each(function(index){
+
+                    if(parseInt($(this).find('input').val()) == 1){
+                        $(this).find('.minus').addClass('disabled');
+                    }
+
+                    busketItemValue($(this));
+
+                    if((itemsLength-1) == index){
+
+                        var parent = $(this).parents('.header-busket-list-wrap').parent();
+                        busketAllItemsSum(parent);
+                    }
+
+                });
+
+
+            });
+
+            /*$('.header-busket-list-wrap li').each(function(index){
 
                 if(parseInt($(this).find('input').val()) == 1){
                     $(this).find('.minus').addClass('disabled');
@@ -212,7 +233,7 @@
                     busketAllItemsSum();
                 }
 
-            });
+            });*/
 
         /* /calcing sum by page loading */
 
@@ -231,7 +252,7 @@
 
                             itemCount = itemCount + 1;
                             if(itemCount > 1){
-                                $('.busket-list-count-change.minus').removeClass('disabled');
+                                item.find('.busket-list-count-change.minus').removeClass('disabled');
                             }
                             item.find('.busket-list-text span').text(itemCount);
                             item.find('.busket-list-input input').val(itemCount);
@@ -320,10 +341,15 @@
 
                 $(document).on('click','.remove-item', function(){
 
-                    var removedId = $(this).attr('data-item-id');
-                    $(this).parents('li').remove();
+                    var removedId = $(this).parents('li').attr('data-item-id');
 
-                    itemsLength = $('.header-busket-list-wrap li').length;
+                    var itemsWrap = $(this).parents('.header-busket-list-wrap');
+
+                    $('li[data-item-id='+removedId+']').each(function(index){
+                        $(this).remove();
+                    });
+
+                    itemsLength = itemsWrap.find('li').length;
 
                     $('.busket-subtitle span, .header-busket-value span').text(itemsLength);
 
@@ -338,7 +364,11 @@
                         $('.header-busket-wrap').removeClass('has-items');
                     }
 
-                    busketAllItemsSum();
+
+                    $('.header-busket-list-wrap').each(function(){
+                        busketAllItemsSum($(this).parent());
+                    });
+
 
                 });
 
@@ -652,6 +682,33 @@
 
 /* /contacts script */
 
+/* busket-page scripts */
+
+    function busketPageScripts(){
+
+        $(document).on('click', '.busket-button-next', function(e){
+
+            e.preventDefault();
+
+            if($('.busket-item').eq($('.busket-item').length-2).is('.current')){
+                $('.busket-button-next').removeClass('active');
+                $('.busket-button-send').addClass('active');
+            }
+
+            var item = $('.busket-item.current');
+
+            $('.busket-item').removeClass('current');
+            item.next().addClass('current');
+
+            var line = $('.busket-circle-wrap.current');
+            line.removeClass('current').addClass('active');
+            line.next().addClass('current');
+
+        });
+
+    }
+
+/* /busket-page scripts */
 
 $(document).ready(function(){
 
@@ -666,6 +723,8 @@ $(document).ready(function(){
     brendCatalog();
 
     contactsSelect();
+
+    busketPageScripts();
 
 });
 
