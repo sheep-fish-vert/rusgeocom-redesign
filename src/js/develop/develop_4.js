@@ -567,6 +567,9 @@ function rewiewFancybox(){
 }
 
 function googleMap(){
+
+  if($('#map').length){
+
     function initialize() {
         var myLatlng = new google.maps.LatLng(cordX,cordY);
         var myOptions = {
@@ -601,6 +604,8 @@ function googleMap(){
 
     }
     initialize();
+
+  }
 }
 
 

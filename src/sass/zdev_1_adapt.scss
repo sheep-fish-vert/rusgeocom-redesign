@@ -101,6 +101,32 @@
 
     /* /brend */
 
+    /* busket-page */
+
+        .busket-page{
+            .busket-items-wrap{
+                .header-busket-list-wrap{
+                    li{flex-wrap:wrap;
+
+                        .busket-item-info{width: 60%;}
+                        .busket-list-count{width:40%;}
+                        .busket-item-end{width:100%;justify-content: center;}
+
+                        .busket-list-link, .busket-list-price{width:auto;}
+
+                    }
+                }
+
+                .header-busket-popup{padding-right:0;justify-content: center;}
+
+                .header-busket-popup-line-top{width:auto;}
+
+            }
+            .busket-items-button{justify-content: center;}
+        }
+
+    /* /busket-page */
+
 }
 @media screen and (max-width: 666px){
 
@@ -492,6 +518,19 @@
         }
 
     /* /brend */
+
+    /* busket-page */
+
+        .busket-page{
+            .busket-top{flex-wrap:wrap;padding-bottom: 0;margin-bottom: 20px;
+                .busket-circle-wrap{width: 50%;margin-bottom: 40px;justify-content: center;
+                    &:last-child{width:50%;}
+                    &:after{display:none;}
+                }
+            }
+        }
+
+    /* /busket-page */
 
 }
 @media screen and (max-width: 320px){
