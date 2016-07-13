@@ -738,7 +738,11 @@
     }
 }
 
-.contacts-map{margin-bottom: 30px;}
+.contacts-map{margin-bottom: 30px;
+     .mbox{
+        p{font-size: 14px;color: #38393a}
+    }
+}
 #map{width: 100%;height: 482px;margin-bottom: 30px;
     img{display: block;margin:0 auto;}
 }
