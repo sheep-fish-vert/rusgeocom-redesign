@@ -583,10 +583,10 @@
     function brendCatalog(){
 
         if($(window).width() < 992){
-                $('.brend-page .header-catalog ul li:first-child').removeClass('show');
-            }else{
-                $('.brend-page .header-catalog ul li:first-child').addClass('show');
-            }
+            $('.brend-page .header-catalog ul li:first-child').removeClass('show');
+        }else{
+            $('.brend-page .header-catalog ul li:first-child').addClass('show');
+        }
 
         $(window).resize(function(){
             if($(window).width() < 992){
@@ -651,6 +651,7 @@
     }
 
 /* /contacts script */
+
 
 $(document).ready(function(){
 
