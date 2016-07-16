@@ -369,6 +369,27 @@
 
             /* /header-another */
 
+            /* header-contacts */
+
+                &.header-contacts{
+                    .header-bottom{
+                        .header-catalog{
+                            &>ul{
+                                &>li{
+                                    &.show, &:hover{
+                                        &:before{display: none;}
+                                    }
+                                    &>ul{top:100%;
+                                        &:after{display: none;}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            /* /header-contacts */
+
         }
 
         .header-contact-telefone.mobile-show{display: block !important;}
